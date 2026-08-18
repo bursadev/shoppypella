@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shoppypella — Pazaryeri · Kickoff Sunumu</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F2660F'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reveal/reset.css">
+<link rel="stylesheet" href="reveal/reveal.css">
+<style>
+  :root{
+    --orange:#F2660F; --orange2:#E0322B;
+    --ink:#1B1A18; --ink2:#4a4742;
+    --body:#5a564f; --muted:#9A958D; --faint:#B8B3AB;
+    --canvas:#FEFCFA; --soft:#FAF8F5; --tint:#FFF1E8; --tint2:#FFE4D3;
+    --line:#ECE9E4; --line2:#E2DDD5;
+    --green:#2E7D5B; --red:#C24A3A;
+    --r-lg:18px; --r-md:14px; --r-sm:10px;
+  }
+  .reveal{ font-family:'Hanken Grotesk',system-ui,sans-serif; color:var(--ink); font-weight:500; }
+  .reveal .slides{ text-align:left; }
+  .reveal .slides section{ height:100%; }
+  .reveal h1,.reveal h2,.reveal h3,.reveal h4{ font-family:'Hanken Grotesk',sans-serif; color:var(--ink); margin:0; line-height:1.05; letter-spacing:-.02em; text-transform:none; }
+  .reveal h1{ font-size:62px; font-weight:900; }
+  .reveal h2{ font-size:38px; font-weight:900; }
+  .reveal h3{ font-size:24px; font-weight:800; }
+  .reveal p{ line-height:1.4; }
+  .reveal strong{ color:var(--ink); font-weight:800; }
+  .reveal section{ background:var(--canvas); }
+  .reveal .slide-background{ background:var(--canvas); }
+  .reveal ul{ list-style:none; margin:0; padding:0; }
+  .reveal em{ font-style:normal; color:var(--orange); font-weight:700; }
+  .de{ color:var(--muted); font-weight:700; font-size:.62em; letter-spacing:0; }
+
+  /* logo wordmark */
+  .brand{ display:inline-flex; align-items:center; gap:11px; }
+  .brand .s{ width:46px; height:46px; border-radius:13px; background:var(--orange); color:#fff; font-weight:900; font-size:27px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(242,102,15,.4); }
+  .brand .wm{ font-weight:900; font-size:30px; letter-spacing:-.01em; }
+  .brand .wm i{ color:var(--orange); font-style:normal; }
+  .brand.sm .s{ width:30px; height:30px; border-radius:9px; font-size:17px; }
+  .brand.sm .wm{ font-size:20px; }
+
+  .eyebrow{ color:var(--orange); font-weight:800; font-size:15px; letter-spacing:.10em; text-transform:uppercase; margin-bottom:14px; }
+  .chip{ display:inline-block; background:var(--tint); color:var(--orange); border:1px solid #F3E1D2; font-weight:800; font-size:13px; padding:5px 12px; border-radius:30px; }
+  .pill{ display:inline-block; background:#fff; border:1px solid var(--line2); color:var(--ink2); font-weight:700; font-size:14px; padding:6px 13px; border-radius:30px; margin:0 6px 8px 0; }
+
+  /* ---- TITLE ---- */
+  .title{ display:flex; flex-direction:column; justify-content:center; height:100%; padding:0 70px; }
+  .title h1{ margin:26px 0 12px; max-width:18ch; }
+  .title .lead{ font-size:22px; color:var(--body); max-width:40ch; }
+  .title .meta{ margin-top:34px; display:flex; gap:10px; flex-wrap:wrap; }
+  .title .meta .pill{ background:var(--soft); }
+
+  /* ---- SECTION DIVIDER ---- */
+  .divider{ display:flex; flex-direction:column; justify-content:center; height:100%; padding:0 70px; background:linear-gradient(125deg,var(--ink) 0%,#2a2622 55%,#5a2c14 100%); }
+  .divider, .divider h2, .divider .eyebrow{ color:#fff; }
+  .divider .big{ font-size:120px; font-weight:900; color:var(--orange); line-height:.9; letter-spacing:-.04em; }
+  .divider h2{ font-size:46px; margin:8px 0 20px; }
+  .divider ul{ display:flex; flex-wrap:wrap; gap:9px; }
+  .divider ul li{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); padding:8px 15px; border-radius:30px; font-weight:700; font-size:16px; color:#fff; }
+  .divider .slide-bg{}
+
+  /* ---- STANDARD CONTENT ---- */
+  .pad{ padding:46px 64px; height:100%; box-sizing:border-box; display:flex; flex-direction:column; }
+  .pad h2 .de{ display:inline; }
+  .subtitle{ color:var(--body); font-size:19px; margin-top:10px; }
+
+  /* ---- SCREEN SLIDE (2 col) ---- */
+  .screen{ display:grid; grid-template-columns:1fr 1.02fr; gap:40px; height:100%; padding:40px 52px; box-sizing:border-box; align-items:start; }
+  .screen .left{ display:flex; flex-direction:column; height:100%; }
+  .screen .grp{ color:var(--orange); font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:9px; }
+  .screen h2{ font-size:33px; }
+  .screen .purpose{ color:var(--ink2); font-weight:700; font-size:17px; margin:12px 0 14px; }
+  .screen ul.keys{ display:flex; flex-direction:column; gap:9px; }
+  .screen ul.keys li{ position:relative; padding-left:22px; font-size:17.5px; line-height:1.28; color:var(--ink2); }
+  .screen ul.keys li::before{ content:""; position:absolute; left:2px; top:9px; width:8px; height:8px; border-radius:50%; background:var(--orange); }
+  .screen .route{ margin-top:auto; padding-top:14px; color:var(--muted); font-size:14px; font-weight:700; font-family:ui-monospace,monospace; }
+
+  .shot{ height:100%; max-height:620px; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:#fff; box-shadow:0 14px 44px rgba(27,26,24,.14); position:relative; }
+  .shot img{ display:block; width:100%; height:auto; vertical-align:top; }
+  .shot::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:64px; background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.92)); pointer-events:none; }
+  .shot .more{ position:absolute; bottom:10px; left:50%; transform:translateX(-50%); z-index:2; font-size:12px; font-weight:800; color:var(--muted); letter-spacing:.04em; }
+
+  /* badge for mockup vs to-design */
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:800; padding:4px 10px; border-radius:30px; }
+  .tag.done{ background:#ECEAE6; color:var(--ink2); }
+  .tag.plan{ background:var(--tint); color:var(--orange); }
+  .tag.done::before{ content:"●"; } .tag.plan::before{ content:"○"; }
+
+  /* ---- GRID CARDS (subscreens / pillars / sitemap) ---- */
+  .cards{ display:grid; gap:14px; margin-top:8px; }
+  .cards.c2{ grid-template-columns:repeat(2,1fr); }
+  .cards.c3{ grid-template-columns:repeat(3,1fr); }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:16px 18px; }
+  .card h4{ font-size:18px; font-weight:800; display:flex; align-items:center; gap:8px; }
+  .card .ger{ color:var(--ink); }
+  .card p{ color:var(--body); font-size:14.5px; margin:6px 0 0; line-height:1.35; }
+  .card .o{ color:var(--orange); font-weight:800; }
+
+  .sublist{ margin-top:9px; display:flex; flex-direction:column; gap:6px; }
+  .sublist li{ font-size:15px; color:var(--ink2); padding-left:18px; position:relative; }
+  .sublist li::before{ content:"○"; position:absolute; left:0; color:var(--orange); font-size:12px; top:2px; }
+  .sublist li b{ color:var(--ink); font-weight:800; }
+
+  /* pillars */
+  .pillars{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:6px; }
+  .pillar{ background:var(--soft); border:1px solid var(--line); border-radius:var(--r-md); padding:14px 15px; }
+  .pillar .n{ color:var(--orange); font-weight:900; font-size:13px; }
+  .pillar .t{ font-weight:800; font-size:16px; margin-top:3px; }
+  .pillar .d{ color:var(--body); font-size:13px; margin-top:4px; line-height:1.3; }
+
+  /* sitemap */
+  .map{ display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin-top:6px; }
+  .mapcol{ background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:14px 16px; }
+  .mapcol h4{ font-size:15px; color:var(--orange); text-transform:uppercase; letter-spacing:.04em; margin-bottom:9px; }
+  .mapcol ul li{ font-size:14px; color:var(--ink2); padding:3px 0 3px 18px; position:relative; line-height:1.25; }
+  .mapcol ul li.d::before{ content:"●"; position:absolute; left:0; color:var(--ink2); font-size:10px; top:6px; }
+  .mapcol ul li.p::before{ content:"○"; position:absolute; left:0; color:var(--orange); font-size:10px; top:6px; }
+  .legend{ margin-top:12px; font-size:14px; color:var(--body); font-weight:700; }
+  .legend .tag{ margin-right:10px; }
+
+  /* actors */
+  .actors{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
+  .actor{ border:1px solid var(--line); border-radius:var(--r-lg); padding:20px; background:#fff; }
+  .actor.k{ background:var(--tint); border-color:#F3E1D2; }
+  .actor h3{ font-size:21px; }
+  .actor .role{ color:var(--orange); font-weight:800; font-size:14px; margin:2px 0 10px; }
+  .actor p{ color:var(--ink2); font-size:15px; line-height:1.4; }
+
+  /* roadmap */
+  .road{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:10px; }
+  .road .box{ border:1px solid var(--line); border-radius:var(--r-lg); padding:20px 22px; }
+  .road .box.mvp{ background:var(--tint); border-color:#F3E1D2; }
+  .road .box h3{ display:flex; align-items:center; gap:10px; font-size:22px; margin-bottom:4px; }
+  .road .box .sub{ color:var(--body); font-size:14px; margin-bottom:12px; }
+  .road .box ul li{ font-size:15.5px; color:var(--ink2); padding:5px 0 5px 20px; position:relative; }
+  .road .box ul li::before{ content:"→"; position:absolute; left:0; color:var(--orange); font-weight:800; }
+
+  /* design tokens */
+  .ds{ display:grid; grid-template-columns:1.1fr 1fr; gap:22px; margin-top:8px; }
+  .swatches{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 16px; }
+  .sw{ width:74px; }
+  .sw .b{ height:48px; border-radius:10px; border:1px solid rgba(0,0,0,.06); }
+  .sw .l{ font-size:11px; color:var(--muted); margin-top:5px; font-weight:700; }
+  .feat{ background:var(--soft); border:1px solid var(--line); border-radius:var(--r-md); padding:14px 16px; margin-bottom:10px; }
+  .feat h4{ font-size:16px; font-weight:800; }
+  .feat p{ font-size:14px; color:var(--body); margin-top:4px; }
+
+  /* next steps */
+  .steps{ display:grid; grid-template-columns:repeat(2,1fr); gap:13px; margin-top:14px; }
+  .step{ background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:15px 18px; display:flex; gap:13px; align-items:flex-start; }
+  .step .num{ width:30px; height:30px; flex:0 0 30px; border-radius:9px; background:var(--orange); color:#fff; font-weight:900; display:flex; align-items:center; justify-content:center; font-size:15px; }
+  .step .t{ font-weight:800; font-size:16px; }
+  .step .d{ color:var(--body); font-size:14px; margin-top:2px; }
+
+  .closing{ display:flex; flex-direction:column; justify-content:center; height:100%; padding:0 70px; background:linear-gradient(125deg,var(--ink),#3a2419 60%,var(--orange) 140%); color:#fff; }
+  .closing h2{ color:#fff; font-size:48px; margin:18px 0 14px; }
+  .closing p{ color:rgba(255,255,255,.9); font-size:20px; max-width:46ch; }
+  .closing .brand .wm{ color:#fff; }
+
+  /* footer brand on content slides */
+  .reveal .slidefoot{ position:absolute; bottom:16px; left:52px; font-size:12px; color:var(--faint); font-weight:700; letter-spacing:.02em; }
+
+  .reveal .slide-number{ background:transparent; color:var(--faint); font-weight:700; font-size:13px; }
+  .note{ color:var(--muted); font-size:14px; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1 · TITEL -->
+<section data-background-color="#FEFCFA">
+  <div class="title">
+    <div class="brand"><div class="s">S</div><div class="wm">shoppy<i>pella</i></div></div>
+    <h1>İsviçre'nin <em>çok satıcılı</em> pazaryeri</h1>
+    <p class="lead">Kickoff görüşmesi · Ekran haritası & kapsam. Hepsiburada / Trendyol tarzı, çok satıcılı bir pazaryeri.</p>
+  </div>
+</section>
+
+<!-- 2 · GÜNDEM -->
+<section><div class="pad">
+  <div class="eyebrow">Gündem</div>
+  <h2>Bugün neyi konuşacağız?</h2>
+  <div class="cards c2" style="margin-top:26px">
+    <div class="card"><h4><span class="o">1.</span>&nbsp;Pazaryeri analizi</h4><p>Çok satıcılı bir pazaryeri neye ihtiyaç duyar — yapı taşları ve 3 aktör.</p></div>
+    <div class="card"><h4><span class="o">2.</span>&nbsp;Sayfa haritası</h4><p>Tüm ekranların gruplanmış sitemap'i — hangileri için mockup hazır, hangileri yeni tasarlanacak.</p></div>
+    <div class="card"><h4><span class="o">3.</span>&nbsp;Ekran ekran</h4><p>8 ana ekran (gerçek görsellerle) + gerekli alt ekranlar.</p></div>
+    <div class="card"><h4><span class="o">4.</span>&nbsp;Tasarım sistemi & yol haritası</h4><p>Marka, token'lar, responsive ve MVP → Faz 2 planı.</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 3 · SHOPPYPELLA NEDİR -->
+<section><div class="pad">
+  <div class="eyebrow">Genel Bakış</div>
+  <h2>Shoppypella nedir?</h2>
+  <p class="subtitle"><strong>Çok satıcılı</strong> bir e-ticaret pazaryeri — birden fazla satıcının ürün sattığı, İsviçre pazarına özel (Almanca, CHF) bir platform. Bu model üç aktöre birden hizmet verir; ekran haritası üçünü de kapsamalı.</p>
+  <div class="actors">
+    <div class="actor k"><h3>Käufer</h3><div class="role">Alıcı · son kullanıcı</div><p>Keşfet → değerlendir → satın al → siparişleri & hesabı yönet.</p></div>
+    <div class="actor"><h3>Verkäufer</h3><div class="role">Satıcı</div><p>Kaydol → ürün ekle → siparişleri yönet → ödeme al → satışları analiz et.</p></div>
+    <div class="actor"><h3>Plattform</h3><div class="role">Operatör</div><p>Katalog, ödeme, güven (değerlendirme/doğrulama) ve hukuk — bir çapraz kesit. Admin paneli Faz 2'de.</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 4 · PAZARYERİ ANALİZİ -->
+<section><div class="pad">
+  <div class="eyebrow">Analiz</div>
+  <h2>Bir pazaryeri neye ihtiyaç duyar?</h2>
+  <p class="subtitle">İşlevsel yapı taşları — her biri bir ya da birden fazla ekrana karşılık gelir.</p>
+  <div class="pillars">
+    <div class="pillar"><div class="n">01</div><div class="t">Katalog & Kategoriler</div><div class="d">Çok seviyeli kategori ağacı, alt kategoriler.</div></div>
+    <div class="pillar"><div class="n">02</div><div class="t">Arama & Filtre</div><div class="d">Arama, filtre, sıralama, sayfalama.</div></div>
+    <div class="pillar"><div class="n">03</div><div class="t">Ürün & Varyant</div><div class="d">Detay, varyant, stok, görsel, değerlendirme.</div></div>
+    <div class="pillar"><div class="n">04</div><div class="t">Sepet & Kasa</div><div class="d">Sepet, adres, kargo, ödeme akışı.</div></div>
+    <div class="pillar"><div class="n">05</div><div class="t">Hesap & Giriş</div><div class="d">Giriş, kayıt, şifre, doğrulama.</div></div>
+    <div class="pillar"><div class="n">06</div><div class="t">Satıcı Yönetimi</div><div class="d">Onboarding, ürün/sipariş/ödeme paneli.</div></div>
+    <div class="pillar"><div class="n">07</div><div class="t">Güven</div><div class="d">Değerlendirme, doğrulanmış satıcı, Käuferschutz.</div></div>
+    <div class="pillar"><div class="n">08</div><div class="t">Ödeme & Komisyon</div><div class="d">TWINT · Karte · PayPal · Rechnung · %5 komisyon.</div></div>
+    <div class="pillar"><div class="n">09</div><div class="t">Lojistik & Kargo</div><div class="d">İsviçre geneli teslimat, takip, iade.</div></div>
+    <div class="pillar"><div class="n">10</div><div class="t">Hukuk & Uyum</div><div class="d">MwSt %8.1, AGB, Datenschutz, Impressum.</div></div>
+    <div class="pillar"><div class="n">11</div><div class="t">Operatör / Admin</div><div class="d">Satıcı onayı, moderasyon, raporlar — Faz 2.</div></div>
+    <div class="pillar" style="background:var(--tint);border-color:#F3E1D2"><div class="n">→</div><div class="t">Sonuç</div><div class="d">8 ana ekran + ~30 alt ekran.</div></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 5 · SAYFA HARİTASI -->
+<section><div class="pad">
+  <div class="eyebrow">Sayfa Haritası · Sitemap</div>
+  <h2>Hangi ekranlara ihtiyacımız var?</h2>
+  <div class="map">
+    <div class="mapcol"><h4>A · Alıcı: Keşfet</h4><ul>
+      <li class="d">Startseite</li><li class="d">Kategorie-Seite</li><li class="d">Produktdetail</li><li class="d">Verkäufer-Shop</li>
+      <li class="p">Suchergebnisse</li><li class="p">Ürün durumları</li></ul></div>
+    <div class="mapcol"><h4>B · Sepet & Kasa</h4><ul>
+      <li class="d">Warenkorb & Kasse</li><li class="p">Lieferung / Zahlung (adımlar)</li><li class="p">Bestellbestätigung</li></ul>
+      <h4 style="margin-top:12px">C · Kimlik Doğrulama</h4><ul>
+      <li class="p">Anmelden</li><li class="p">Konto erstellen</li><li class="p">Passwort vergessen / zurücksetzen</li><li class="p">E-Mail-Verifizierung</li></ul></div>
+    <div class="mapcol"><h4>D · Mein Konto</h4><ul>
+      <li class="d">Konto-Übersicht</li><li class="p">Bestellungen + Detay/Takip</li><li class="p">Adressen · Zahlungsmethoden</li><li class="p">Wunschliste · Bewertungen</li><li class="p">Einstellungen (5 sekme)</li></ul></div>
+    <div class="mapcol"><h4>E · Verkäufer</h4><ul>
+      <li class="d">Verkäufer-Registrierung</li><li class="d">Verkäufer-Dashboard</li><li class="p">Verkäufer werden (Landing)</li><li class="p">Produkte · Produkt-Formular</li><li class="p">Bestellungen · Versand</li><li class="p">Auszahlungen · Bewertungen · Einstellungen</li></ul></div>
+    <div class="mapcol"><h4>F · Sistem / Genel</h4><ul>
+      <li class="p">Globale Suche</li><li class="p">404 / Fehlerseite</li><li class="p">Hilfe / FAQ</li><li class="p">Rechtliches (AGB…)</li><li class="p">Plattform-Admin (Faz 2)</li></ul></div>
+    <div class="mapcol" style="background:var(--soft)"><h4 style="color:var(--ink)">Özet</h4>
+      <p style="font-size:30px;font-weight:900;margin:4px 0">8 <span style="color:var(--ink2)">●</span></p>
+      <p class="note">mockup'ı hazır ana ekran</p>
+      <p style="font-size:30px;font-weight:900;margin:10px 0 4px">~30 <span style="color:var(--orange)">○</span></p>
+      <p class="note">yeni tasarlanacak ekran</p></div>
+  </div>
+  <div class="legend"><span class="tag done">Mockup hazır (referans)</span><span class="tag plan">Yeni tasarlanacak</span></div>
+  <p class="note" style="margin-top:8px">Not: Mockup'lar yalnızca referanstır — hiçbir ekran henüz tasarlanıp uygulanmadı.</p>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 6 · DIVIDER A -->
+<section data-background-color="#1B1A18">
+  <div class="divider">
+    <div class="eyebrow">Bölüm A</div>
+    <div class="big">A</div>
+    <h2>Alıcı — Keşfet & Satın Al</h2>
+    <ul><li>Startseite</li><li>Kategorie-Seite</li><li>Produktdetail</li><li>Verkäufer-Shop</li><li>+ alt ekranlar</li></ul>
+  </div>
+</section>
+
+<!-- 7 · STARTSEITE -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">A · Alıcı · Keşfet</div>
+    <h2>Startseite <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Giriş noktası — kategorileri ve öne çıkan ürünleri keşfet.</p>
+    <ul class="keys">
+      <li>Sticky başlık: büyük arama + sepet + „Verkäufer werden"</li>
+      <li>Galaxus tarzı kategori kenar çubuğu (akordeon, tek açık)</li>
+      <li>Hero: „Der Marktplatz der Schweiz" + „Jetzt entdecken" CTA</li>
+      <li><strong>Beliebte Produkte</strong> — 4'lü ürün ızgarası (8 ürün)</li>
+      <li><strong>Neu eingetroffen</strong> — yeni gelenler ızgarası</li>
+      <li>USP şeridi: ücretsiz kargo · 30 gün iade · güvenli ödeme · destek</li>
+      <li>Mobil: alt sekme çubuğu + hamburger drawer</li>
+    </ul>
+    <div class="route">shoppypella.ch</div>
+  </div>
+  <div class="shot"><img src="screens/01-startseite.png" alt="Startseite"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 8 · KATEGORIE -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">A · Alıcı · Keşfet</div>
+    <h2>Kategorie-Seite <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Bir kategoride ürünleri filtrele & gözat.</p>
+    <ul class="keys">
+      <li>Breadcrumb + kategori banner'ı (ürün & satıcı sayısı)</li>
+      <li>Alt kategori pill'leri (Reinigung, Aufbewahrung, Raumdüfte…)</li>
+      <li>Filtre kenar çubuğu: fiyat aralığı (çift kaydırıcı)</li>
+      <li>Filtreler: alt kategori · puan · satıcı · stok</li>
+      <li>Sıralama barı: „9 von 248 Produkten" + Beliebtheit ▾</li>
+      <li>Ürün ızgarası (≈5'li) + sayfalama (1 … 28)</li>
+    </ul>
+    <div class="route">shoppypella.ch/c/haushalt-wohnen</div>
+  </div>
+  <div class="shot"><img src="screens/02-kategorie.png" alt="Kategorie-Seite"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 9 · PRODUKTDETAIL -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">A · Alıcı · Keşfet</div>
+    <h2>Produktdetail <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Ürünü incele & satın al.</p>
+    <ul class="keys">
+      <li>Galeri: ana görsel + 4 küçük resim · „−24%" rozeti</li>
+      <li>Buy-box: satıcı çipi (Pella Home ✓) · başlık · puan 4.7 (128)</li>
+      <li>Fiyat: CHF 12.90 (üstü çizili 16.90) + tasarruf çipi</li>
+      <li>Varyant çipleri (Duftrichtung) · adet sayacı · stok</li>
+      <li>Eylemler: In den Warenkorb · Sofort kaufen · favori</li>
+      <li>Sekmeler: Beschreibung / Bewertungen / Versand + spec tablosu</li>
+      <li>Değerlendirme histogramı + „Das könnte Ihnen gefallen"</li>
+    </ul>
+    <div class="route">shoppypella.ch/p/london-blue-250ml</div>
+  </div>
+  <div class="shot"><img src="screens/03-produktdetail.png" alt="Produktdetail"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 10 · VERKÄUFER-SHOP -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">A · Alıcı · Keşfet</div>
+    <h2>Verkäufer-Shop <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Bir satıcının vitrini.</p>
+    <ul class="keys">
+      <li>Kapak banner'ı + avatar + rozetler (Geprüft · Top-Verkäufer)</li>
+      <li>Puan · 1'240 değerlendirme · %96 olumlu · „Versand aus Zürich"</li>
+      <li>Eylemler: + Folgen · Nachricht</li>
+      <li>İstatistik kartları: 64 ürün · 4.8★ · 3'400 takipçi · &lt; 2 sa yanıt</li>
+      <li>Sekmeler: Alle Produkte / Bestseller / Über uns / Bewertungen</li>
+      <li>„Meistverkauft" öne çıkan şerit + satıcının ürün ızgarası</li>
+    </ul>
+    <div class="route">shoppypella.ch/shop/pella-home</div>
+  </div>
+  <div class="shot"><img src="screens/04-verkaeufer-shop.png" alt="Verkäufer-Shop"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 11 · A ALT EKRANLAR -->
+<section><div class="pad">
+  <div class="eyebrow">A · Alıcı · Keşfet</div>
+  <h2>Alt ekranlar <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <div class="cards c3" style="margin-top:22px">
+    <div class="card"><h4>Suchergebnisse</h4><p>Kategori düzeniyle; arama sorgusu + filtreler + sıralama.</p></div>
+    <div class="card"><h4>Ürün durumları</h4><p>Bewertungen-Tab (tüm yorumlar), galeri-lightbox, „Nicht lieferbar" durumu.</p></div>
+    <div class="card"><h4>Boş sonuç</h4><p>0 sonuç / boş kategori + öneriler.</p></div>
+  </div>
+  <p class="note" style="margin-top:18px">Bu ekranlar mevcut bileşenleri (ProductCard, filtre, ızgara) yeniden kullanır.</p>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 12 · WARENKORB & KASSE -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">B · Sepet & Kasa</div>
+    <h2>Warenkorb & Kasse <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Tek sayfada sepeti incele & öde.</p>
+    <ul class="keys">
+      <li>3 adımlı gösterge: Warenkorb → Lieferung → Zahlung</li>
+      <li>Satıcı grubu + satır ürünler (varyant · adet · stok · Entfernen)</li>
+      <li>Lieferadresse seç + „Neue Adresse"</li>
+      <li>Lieferart: Standard (Gratis) / Express (CHF 9.90)</li>
+      <li>Zahlungsart: TWINT · Karte · PayPal · Rechnung</li>
+      <li>Sticky özet: Gutschein · ara toplam · kargo · indirim · MwSt</li>
+      <li>„Kostenpflichtig bestellen" + SSL & güven rozetleri</li>
+    </ul>
+    <div class="route">shoppypella.ch/warenkorb</div>
+  </div>
+  <div class="shot"><img src="screens/06-warenkorb.png" alt="Warenkorb & Kasse"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 13 · B ALT EKRANLAR -->
+<section><div class="pad">
+  <div class="eyebrow">B · Sepet & Kasa</div>
+  <h2>Checkout adımları & onay <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <div class="cards c3" style="margin-top:22px">
+    <div class="card"><h4>Lieferung</h4><p>Adres & kargo seçimi (tek sayfa kasanın 2. durumu).</p></div>
+    <div class="card"><h4>Zahlung</h4><p>Ödeme yöntemi onayı & son özet (3. durum).</p></div>
+    <div class="card"><h4>Bestellbestätigung</h4><p><span class="o">Prototipte yok →</span> sipariş özeti, sipariş no, takip linki, „Danke" sayfası. Dönüşüm için kritik.</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 14 · AUTH (C) -->
+<section><div class="pad">
+  <div class="eyebrow">C · Kimlik Doğrulama</div>
+  <h2>Giriş & Kayıt akışı <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <p class="subtitle">Prototipte yok — güven & dönüşüm için MVP'de gerekli. 5 ekran:</p>
+  <div class="cards c3" style="margin-top:14px">
+    <div class="card"><h4>Anmelden</h4><p>Giriş — e-posta/şifre, „Passwort vergessen", sosyal/TWINT opsiyonu.</p></div>
+    <div class="card"><h4>Konto erstellen</h4><p>Müşteri kaydı — ad, e-posta, şifre + AGB onayı.</p></div>
+    <div class="card"><h4>Passwort vergessen</h4><p>Sıfırlama isteği (e-posta ile bağlantı).</p></div>
+    <div class="card"><h4>Passwort zurücksetzen</h4><p>Yeni şifre belirleme.</p></div>
+    <div class="card"><h4>E-Mail-Verifizierung</h4><p>Kod/OTP onayı; opsiyonel 2FA.</p></div>
+    <div class="card" style="background:var(--soft)"><h4 class="o">Not</h4><p>Alıcı & satıcı bu akışı paylaşır; panel için ayrıca „Verkäufer-Login".</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 15 · DIVIDER D -->
+<section data-background-color="#1B1A18">
+  <div class="divider">
+    <div class="eyebrow">Bölüm D</div>
+    <div class="big">D</div>
+    <h2>Mein Konto — Alıcı Hesabı</h2>
+    <ul><li>Konto-Übersicht</li><li>Bestellungen</li><li>Adressen · Zahlungen</li><li>Wunschliste · Bewertungen</li><li>Einstellungen (5 sekme)</li></ul>
+  </div>
+</section>
+
+<!-- 16 · MEIN KONTO -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">D · Alıcı Hesabı</div>
+    <h2>Mein Konto <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Müşteri self-servis (genel bakış).</p>
+    <ul class="keys">
+      <li>Profil kartı (avatar · „Mitglied seit 2024") + hesap menüsü</li>
+      <li>İstatistik: 14 sipariş · CHF 312 tasarruf · 8 favori · 2 değerlendirme</li>
+      <li><strong>„Meine Bestellungen"</strong> listesi: durum çipi + eylem butonu</li>
+      <li>Eylemler: Sendung verfolgen / Erneut kaufen / Bewerten</li>
+      <li>Standart adres kartı + Zahlungsmethoden kartı</li>
+      <li>Menü: Bestellungen · Adressen · Zahlungen · Wunschliste · Einstellungen</li>
+    </ul>
+    <div class="route">shoppypella.ch/konto</div>
+  </div>
+  <div class="shot"><img src="screens/05-mein-konto.png" alt="Mein Konto"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 17 · D KONTO ALT SAYFALAR -->
+<section><div class="pad">
+  <div class="eyebrow">D · Alıcı Hesabı</div>
+  <h2>Konto alt sayfaları <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <div class="cards c3" style="margin-top:20px">
+    <div class="card"><h4>Bestellungen</h4><p>Sipariş geçmişi, durum filtreleri.</p></div>
+    <div class="card"><h4>Bestelldetail / Takip</h4><p>Sipariş detayı + Sendungsverfolgung.</p></div>
+    <div class="card"><h4>Adressen</h4><p>Adres defteri + ekle/düzenle/sil.</p></div>
+    <div class="card"><h4>Zahlungsmethoden</h4><p>TWINT / kart yönetimi.</p></div>
+    <div class="card"><h4>Wunschliste</h4><p>Kaydedilen / favori ürünler.</p></div>
+    <div class="card"><h4>Meine Bewertungen</h4><p>Kendi değerlendirmelerim + „Bewertung schreiben".</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 18 · D EINSTELLUNGEN -->
+<section><div class="pad">
+  <div class="eyebrow">D · Alıcı Hesabı · Einstellungen</div>
+  <h2>Einstellungen — sekmeler <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <p class="subtitle">Einstellungen tek bir ekran değil, 5 sekmedir:</p>
+  <div class="cards c3" style="margin-top:14px">
+    <div class="card"><h4>Profil</h4><p>Ad, e-posta, telefon, dil seçimi.</p></div>
+    <div class="card"><h4>Sicherheit / Passwort</h4><p>Şifre değiştirme, 2FA, oturumlar.</p></div>
+    <div class="card"><h4>Benachrichtigungen</h4><p>E-posta / push tercihleri.</p></div>
+    <div class="card"><h4>Sprache & Region</h4><p>DE / FR / IT · CHF · İsviçre bölgesi.</p></div>
+    <div class="card"><h4>Konto löschen</h4><p>Hesap silme / veri talebi (uyum).</p></div>
+    <div class="card" style="background:var(--soft)"><h4 class="o">Abmelden</h4><p>Oturumu kapat (eylem).</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 19 · DIVIDER E -->
+<section data-background-color="#1B1A18">
+  <div class="divider">
+    <div class="eyebrow">Bölüm E</div>
+    <div class="big">E</div>
+    <h2>Verkäufer — Satıcı</h2>
+    <ul><li>Verkäufer-Registrierung</li><li>Verkäufer-Dashboard</li><li>Produkte · Bestellungen</li><li>Versand · Auszahlungen</li><li>+ alt ekranlar</li></ul>
+  </div>
+</section>
+
+<!-- 20 · REGISTRIERUNG -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">E · Satıcı</div>
+    <h2>Verkäufer-Registrierung <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Yeni satıcı onboarding.</p>
+    <ul class="keys">
+      <li>Kendi üst barı: „Verkäufer-Center" (pazaryeri başlığı değil)</li>
+      <li>4 adımlı stepper: Konto → Firmendaten → Verifizierung → Fertig</li>
+      <li>Firmendaten formu: Firma · Rechtsform · UID · adres · Kanton · IBAN</li>
+      <li>AGB onayı + „Weiter zur Verifizierung"</li>
+      <li>Sağ panel: 0.– başlangıç · %5 komisyon · 48 sa Freischaltung</li>
+      <li>Avantaj listesi + satıcı referansı (testimonial)</li>
+    </ul>
+    <div class="route">verkaufen.shoppypella.ch/start</div>
+  </div>
+  <div class="shot"><img src="screens/07-registrierung.png" alt="Verkäufer-Registrierung"></div>
+</div></section>
+
+<!-- 21 · DASHBOARD -->
+<section><div class="screen">
+  <div class="left">
+    <div class="grp">E · Satıcı</div>
+    <h2>Verkäufer-Dashboard <span class="tag done" style="vertical-align:middle">Mockup hazır</span></h2>
+    <p class="purpose">Amaç: Satıcı arka ofisi.</p>
+    <ul class="keys">
+      <li>Koyu üst bar + sol panel menüsü (Übersicht aktif)</li>
+      <li>Uyarı kartları: kargo bekleyen · düşük stok</li>
+      <li>4 KPI: Umsatz · Bestellungen · Conversion · Bewertung</li>
+      <li>„Umsatz pro Tag" bar grafiği + „Nächste Auszahlung" kartı</li>
+      <li>„Neueste Bestellungen" tablosu (durum çipleri)</li>
+      <li>„Top-Produkte" listesi (stok uyarıları)</li>
+    </ul>
+    <div class="route">verkaufen.shoppypella.ch/dashboard</div>
+  </div>
+  <div class="shot"><img src="screens/08-dashboard.png" alt="Verkäufer-Dashboard"><span class="more">↓ devamı kaydırılır</span></div>
+</div></section>
+
+<!-- 22 · E ALT EKRANLAR -->
+<section><div class="pad">
+  <div class="eyebrow">E · Satıcı</div>
+  <h2>Satıcı paneli alt ekranları <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <div class="cards c3" style="margin-top:18px">
+    <div class="card"><h4>Verkäufer werden</h4><p>Pazarlama / landing sayfası (kayda yönlendirir).</p></div>
+    <div class="card"><h4>Produkte</h4><p>Ürün listesi yönetimi (durum, stok, fiyat).</p></div>
+    <div class="card"><h4>Produkt anlegen/bearbeiten</h4><p>Form (görsel, varyant, fiyat).</p></div>
+    <div class="card"><h4>Bestellungen</h4><p>Satıcı siparişleri + detay & kargo işaretleme.</p></div>
+    <div class="card"><h4>Versand</h4><p>Kargo / etiket / takip.</p></div>
+    <div class="card"><h4>Auszahlungen</h4><p>Bakiye, ödeme geçmişi, banka bilgisi.</p></div>
+    <div class="card"><h4>Bewertungen</h4><p>Satıcı değerlendirmeleri + yanıt.</p></div>
+    <div class="card"><h4>Einstellungen</h4><p>Shop-Profil · Tarif/Plan · Team · Steuern.</p></div>
+    <div class="card" style="background:var(--soft)"><h4 class="o">Verkäufer-Login</h4><p>Satıcı girişi (auth ile paylaşılır).</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 23 · SİSTEM (F) -->
+<section><div class="pad">
+  <div class="eyebrow">F · Sistem / Genel</div>
+  <h2>Çapraz kesit sayfalar <span class="tag plan" style="vertical-align:middle">Yeni tasarlanacak</span></h2>
+  <div class="cards c3" style="margin-top:20px">
+    <div class="card"><h4>Globale Suche</h4><p>Genel arama + öneriler / otomatik tamamlama.</p></div>
+    <div class="card"><h4>404 / Fehlerseite</h4><p>Hata & boş durum sayfaları.</p></div>
+    <div class="card"><h4>Hilfe / FAQ</h4><p>Müşteri hizmetleri, sık sorulanlar, iletişim.</p></div>
+    <div class="card"><h4>Rechtliches</h4><p>AGB · Datenschutz · Impressum · Widerruf (footer linkleri).</p></div>
+    <div class="card"><h4>Plattform-Admin <span class="note">(Faz 2)</span></h4><p>Operatör paneli: satıcı onayı, moderasyon, komisyon, raporlar.</p></div>
+    <div class="card" style="background:var(--soft)"><h4 class="o">Shell</h4><p>Ortak header/footer/drawer/bottom-bar — tüm alıcı ekranlarında.</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 24 · TASARIM SİSTEMİ -->
+<section><div class="pad">
+  <div class="eyebrow">Tasarım Sistemi</div>
+  <h2>Marka & Tasarım Sistemi</h2>
+  <div class="ds">
+    <div>
+      <div class="swatches">
+        <div class="sw"><div class="b" style="background:#F2660F"></div><div class="l">Orange #F2660F</div></div>
+        <div class="sw"><div class="b" style="background:#1B1A18"></div><div class="l">Ink #1B1A18</div></div>
+        <div class="sw"><div class="b" style="background:#FFF1E8"></div><div class="l">Tint</div></div>
+        <div class="sw"><div class="b" style="background:#2E7D5B"></div><div class="l">Success</div></div>
+        <div class="sw"><div class="b" style="background:#FEFCFA;border:1px solid #ECE9E4"></div><div class="l">Canvas</div></div>
+      </div>
+      <ul class="keys">
+        <li>Tipografi: <strong>Hanken Grotesk</strong> (400–900)</li>
+        <li>Radius: buton 12 · kart 14 · panel 16 · hero 20</li>
+        <li>Boşluk skalası: 4 / 8 / 12 / 16 / 24 / 40</li>
+        <li><strong>Responsive:</strong> Desktop + Mobil (~430px) — alt sekme + drawer</li>
+        <li>Dil & Para birimi: Deutsch · CHF · Schweiz</li>
+      </ul>
+    </div>
+    <div>
+      <div class="feat"><h4>Theming (keşifsel)</h4><p>Prototipte 4 eksen denendi: Font · Radius · Background · Akzent. <strong>Marka turuncusu her varyantta sabit kalır.</strong></p></div>
+      <div class="feat" style="background:var(--tint);border-color:#F3E1D2"><h4 class="o">Üretim varsayılanı: „Classic"</h4><p>Grotesk + Normal radius + beyaz arka plan + Solid turuncu. Üretimde switcher yok — tek kombinasyon uygulanır.</p></div>
+      <div class="feat"><h4>İkonlar & Varlıklar</h4><p>Lucide tarzı stroke ikon seti · 12 gerçek Pella ürün görseli · gerçek logo.</p></div>
+    </div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 25 · FAZ 1 · MVP -->
+<section><div class="pad">
+  <div class="eyebrow">Yol Haritası · Faz 1</div>
+  <h2>MVP — tam çalışan pazaryeri</h2>
+  <p class="subtitle"><strong>Faz 1:</strong> uçtan uca çalışan, yayına alınmış bir pazaryeri. Aşağıdakilerin tümü MVP kapsamındadır — <strong>not:</strong> hiçbir ekran henüz tasarlanıp uygulanmadı.</p>
+  <div class="cards c3" style="margin-top:12px">
+    <div class="card"><h4>Alıcı · Alışveriş</h4><ul class="sublist">
+      <li>Katalog: kategori & alt kategori</li><li>Ürün listeleme · detay</li><li>Arama · filtre · sıralama</li></ul></div>
+    <div class="card"><h4>Sepet & Ödeme</h4><ul class="sublist">
+      <li>Sepet + tek sayfa kasa</li><li>Ödeme: <b>TWINT · Karte · Rechnung</b></li><li>Sipariş onayı + e-posta</li></ul></div>
+    <div class="card"><h4>Hesap & Giriş</h4><ul class="sublist">
+      <li>Kayıt · giriş · şifre sıfırlama</li><li>Siparişler · adresler</li><li>Ödeme yöntemleri</li></ul></div>
+    <div class="card"><h4>Satıcı</h4><ul class="sublist">
+      <li>Onboarding + doğrulama</li><li>Ürün & sipariş yönetimi</li><li>Auszahlungen (ödemeler)</li></ul></div>
+    <div class="card"><h4>Güven</h4><ul class="sublist">
+      <li>Değerlendirme & puan</li><li>Doğrulanmış satıcı rozeti</li><li>Käuferschutz / iade</li></ul></div>
+    <div class="card"><h4>Altyapı · Uyum · Operasyon</h4><ul class="sublist">
+      <li>Responsive: Desktop + Mobil · DE · CHF</li><li>Hukuk: AGB · Datenschutz · Impressum</li><li>Temel operatör paneli (satıcı onayı)</li></ul></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 26 · FAZ 2 · BÜYÜME -->
+<section><div class="pad">
+  <div class="eyebrow">Yol Haritası · Faz 2</div>
+  <h2>Faz 2 — MVP üstüne büyüme</h2>
+  <p class="subtitle">Yayına aldıktan sonra: MVP üstüne kurulan büyüme & ölçek katmanı.</p>
+  <div class="cards c3" style="margin-top:12px">
+    <div class="card"><h4><span class="o">Marketing</span></h4><ul class="sublist">
+      <li>Kampanyalar & kuponlar</li><li>E-posta / CRM · push</li><li>Sadakat & puan programı</li></ul></div>
+    <div class="card"><h4><span class="o">Analytics</span></h4><ul class="sublist">
+      <li>Dönüşüm / funnel analizi</li><li>Satıcı & platform raporları</li><li>A/B test altyapısı</li></ul></div>
+    <div class="card"><h4><span class="o">SEO</span></h4><ul class="sublist">
+      <li>Teknik SEO & site haritası</li><li>Yapısal veri (schema.org)</li><li>İçerik / blog · çok dilli SEO</li></ul></div>
+    <div class="card"><h4><span class="o">Mobil Uygulamalar</span></h4><ul class="sublist">
+      <li>iOS & Android</li><li>Push & native ödeme</li><li>Native alışveriş deneyimi</li></ul></div>
+    <div class="card"><h4><span class="o">Uluslararası</span></h4><ul class="sublist">
+      <li>Çoklu dil: FR / IT</li><li>Çoklu para birimi</li><li>Bölgesel kargo</li></ul></div>
+    <div class="card"><h4><span class="o">Operasyon+</span></h4><ul class="sublist">
+      <li>Gelişmiş Plattform-Admin</li><li>Moderasyon & komisyon yönetimi</li><li>Kişiselleştirme / öneri motoru</li></ul></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 27 · TEKNİK YAKLAŞIM -->
+<section><div class="pad">
+  <div class="eyebrow">Teknik Yaklaşım</div>
+  <h2>Prototipten ürüne</h2>
+  <div class="cards c2" style="margin-top:18px">
+    <div class="card"><h4>Kaynak</h4><p>Tasarım, <code>.dc.html</code> streaming-component prototipi — birebir referans (renk, boşluk, tipografi, Almanca metin), <em>framework değil</em>.</p></div>
+    <div class="card"><h4>Hedef Stack</h4><p>Uygun stack ile yeniden inşa: React + Router + component lib (veya ekip standardı).</p></div>
+    <div class="card"><h4>Görseller</h4><p>Buradaki görseller prototipin <strong>gerçek render'larıdır</strong> — navigator/cihaz çerçevesi olmadan.</p></div>
+    <div class="card"><h4>Routing & State</h4><p>Navigator değil gerçek route'lar; sepet, auth, satıcı verisi için gerçek state & API.</p></div>
+    <div class="card"><h4>Bu sunum</h4><p><strong>reveal.js</strong> ile hazırlandı (yerel, çevrimdışı çalışır). Ok tuşları / boşluk ile gezilir.</p></div>
+    <div class="card"><h4>Bileşen yeniden kullanımı</h4><p>ProductCard, header, footer, filtre, KPI kartı — alt ekranların çoğu bunları tekrar kullanır.</p></div>
+  </div>
+  <div class="slidefoot">shoppypella · Kickoff</div>
+</div></section>
+
+<!-- 28 · SONRAKİ ADIMLAR / KAPANIŞ -->
+<section data-background-color="#1B1A18">
+  <div class="closing">
+    <div class="brand sm"><div class="s">S</div><div class="wm">shoppy<i>pella</i></div></div>
+    <h2>Sonraki adımlar</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><div class="t">Kapsamı onayla</div><div class="d">MVP ekran listesi & öncelikler.</div></div></div>
+      <div class="step"><div class="num">2</div><div><div class="t">Stack kararı</div><div class="d">Framework + component lib.</div></div></div>
+      <div class="step"><div class="num">3</div><div><div class="t">Sağlayıcılar</div><div class="d">Ödeme (TWINT/Stripe), auth, kargo.</div></div></div>
+      <div class="step"><div class="num">4</div><div><div class="t">Sprint planı</div><div class="d">Design-token'lar → shell → ekranlar.</div></div></div>
+    </div>
+    <p style="margin-top:26px">Teşekkürler — sorularınız için hazırız. 🍊</p>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="reveal/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 1.6,
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true
+  });
+</script>
+</body>
+</html>
