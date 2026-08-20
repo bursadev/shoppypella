@@ -12,17 +12,20 @@ mobil görünüm, tamamı Türkçe.
 | Ürün Detayı | Sepet & Ödeme |
 | Satıcı Kaydı | Satıcı Paneli |
 
-Ürün görselleri ve katalog Pella Home'un gerçek ürünlerinden alınmıştır.
+Ürün görselleri ve katalog Pella Home'un gerçek ürünlerinden alınmıştır; diğer
+kategorilerdeki ürünler pazaryerinin çok satıcılı yapısını göstermek için
+konulmuş temsili örneklerdir.
 
 ---
 
 ## Repo yapısı
 
 ```
-docs/          GitHub Pages'in yayınladığı site (üretilmiş — elle düzenlemeyin)
-components/    Design Component kaynakları (ProductCard, Thumb, Footer)
-src/           Kaynak malzeme: orijinal paket + ürün fotoğrafları
-build.py       docs/ dizinini üreten betik
+docs/           GitHub Pages'in yayınladığı site (üretilmiş — elle düzenlemeyin)
+src/handoff/    Tasarım paketi: prototipin kaynağı (Design Component'ler + görseller)
+src/fonts/      Kendi sunucumuzdan servis edilen woff2 dosyaları + @font-face css
+src/photos/     Orijinal ürün fotoğrafları (arşiv; derlemede kullanılmıyor)
+build.py        docs/ dizinini üreten betik
 ```
 
 ## Derleme
@@ -43,21 +46,48 @@ yüklediği için bir HTTP sunucusu gerekir.
 
 ## Nasıl çalışıyor
 
-`src/shoppypella-tr.html` kendi kendini açan tek dosyalık bir pakettir: UUID ile
-adreslenen base64 varlıklardan oluşan bir manifest, ve her varlık referansının o
-çıplak UUID olduğu bir şablon. Çalışma zamanında paketleyici her UUID'yi bir
-`blob:` URL'ine çevirir.
+`src/handoff/` bir Design Component paketidir: kök bileşen
+`Shoppypella.dc.html` (8 ekranın tamamı), onun içe aktardığı üç kardeş bileşen
+(`ProductCard`, `Thumb`, `Footer`), çalışma zamanı (`support.js`) ve ürün
+görselleri. Bir dizinden açılmak üzere tasarlandığı için statik bir sunucuda
+neredeyse olduğu gibi çalışır.
 
-Statik bir sunucuda buna gerek yok. `build.py` varlıkları diske yazar ve
-UUID'leri göreli yollara çevirir. Bu, pakette bozuk olan `assets/imgNN.jpeg`
-ürün referanslarını da onarır — paket içinde bunları çözecek bir dosya sistemi
-yoktu.
+`build.py` yalnızca şunları değiştirir:
 
-Paket ayrıca `ProductCard`, `Thumb` ve `Footer` bileşenlerine atıfta bulunuyor
-ama hiçbirini içermiyordu; bu yüzden tüm ürün ızgaraları ve küçük görseller boş
-kutu olarak görünüyordu. dc-runtime `<dc-import name="X">` ifadesini `./X.dc.html`
-dosyasını çekerek çözer — statik bir sunucunun gerçekten sunabileceği bir şey.
-Bu üç bileşen `components/` altında yazılmıştır.
+- çalışma zamanını `assets/dc-runtime.js` adıyla kopyalar, sayfaya gerçek bir
+  başlık, açıklama, sosyal önizleme ve favicon ekler;
+- iki Google Fonts bağlantısını `src/fonts` içindeki @font-face kurallarıyla
+  değiştirir — böylece site bir font CDN'ine bağlı kalmaz;
+- ürün fotoğraflarını web için küçültür ve yalnızca gerçekten kullanılan
+  görselleri kopyalar.
+
+Geri kalan her şey olduğu gibi kopyalanır; tasarım paketi tek doğru kaynak
+olarak kalır. dc-runtime `<dc-import name="X">` ifadesini `./X.dc.html`
+dosyasını çekerek çözdüğü için kardeş bileşenler `index.html` ile aynı dizine
+konur.
 
 Çalışma zamanı React, ReactDOM ve Babel'i unpkg'den yükler, yani sayfanın
 internet bağlantısına ihtiyacı vardır.
+
+## Müşteri talepleri
+
+Tasarım paketindeki `REQUIREMENTS.md` müşterinin istek listesini üretim
+talimatlarına çevirir. Prototipte görünenler:
+
+- **Fiyat gösterimi** — normal fiyat siyah, indirimli fiyat kırmızı
+  (`#D92D20`), yanında üstü çizili eski fiyat.
+- **Influencer sistemi** — satıcı panelinde "Influencer" menüsü ve kampanya
+  kodu tablosu; sepette tek bir "İndirim / influencer kodu" alanı.
+- **Kargo takibi** — Hesabım › Siparişlerim'de taşıyıcı adı, tıklanabilir takip
+  numarası ve "Kargo takip" aksiyonu; durum etiketleri (Yolda / Teslim edildi).
+- **Sosyal medya** — footer'da Instagram, TikTok, Facebook, Pinterest, YouTube
+  bağlantıları.
+- **Yasal metinler** — footer'da ayrı "Yasal" sütunu (Gizlilik, KVKK, Çerez,
+  Kullanım Koşulları, Mesafeli Satış, İade, Kargo) ve ödeme adımında onay
+  satırı. Metinlerin kendisi müşterinin hukukçusundan gelecek.
+- **Alan adı** — ekran adresleri `shoppypella.com`, satıcı tarafı
+  `satici.shoppypella.com`.
+
+Bunların arkasındaki gerçek sistemler (kampanya kodu CRUD'u ve atıfı, taşıyıcı
+API'leri, SSL/HSTS, çerez onayı, SEO) üretim işidir; prototip yalnızca arayüzü
+gösterir.
