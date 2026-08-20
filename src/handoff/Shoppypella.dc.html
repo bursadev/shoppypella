@@ -79,6 +79,7 @@
       </div>
       <div style="display:flex;background:#F2EFEA;border-radius:9px;padding:3px">
         <button onClick="{{ setDesktop }}" style="border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:7px;background:{{ dDesk }};color:{{ fDesk }}">Desktop</button>
+        <button onClick="{{ setTablet }}" style="border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:7px;background:{{ dTab }};color:{{ fTab }}">Tablet</button>
         <button onClick="{{ setMobile }}" style="border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:7px;background:{{ dMob }};color:{{ fMob }}">Mobil</button>
       </div>
     </div>
@@ -111,7 +112,7 @@
                 <input placeholder="Ne arıyorsunuz? örn. mikrofiber bez" style="flex:1;min-width:60px;border:none;outline:none;font-family:inherit;font-size:15px;padding:0 14px;color:var(--ink,#1B1A18);background:transparent"/>
                 <button style="height:100%;flex-shrink:0;border:none;background:var(--accent-bg,var(--pri,#F2660F));color:#fff;font-family:inherit;font-weight:700;font-size:15px;padding:0 30px;cursor:pointer">Ara</button>
               </div>
-              <div onClick="{{ becomeSeller }}" style="display:flex;flex-direction:column;cursor:pointer;flex-shrink:0;line-height:1.2"><span style="font-size:11.5px;color:#9A958D">Pella satmak ister misiniz?</span><span style="font-size:14px;font-weight:700;color:var(--pri,#F2660F)">Satıcı ol</span></div>
+              <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><div onClick="{{ becomeSeller }}" style="display:flex;flex-direction:column;cursor:pointer;flex-shrink:0;line-height:1.2"><span style="font-size:11.5px;color:#9A958D">Pella satmak ister misiniz?</span><span style="font-size:14px;font-weight:700;color:var(--pri,#F2660F)">Satıcı ol</span></div></sc-if>
               <div onClick="{{ openAccount }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0"><span style="font-size:20px"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:-0.14em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-user"/></svg></span><div style="line-height:1.2"><div style="font-size:11.5px;color:#9A958D">Giriş yap</div><div style="font-size:14px;font-weight:700;color:var(--ink,#1B1A18)">Hesabım</div></div></div>
               <div onClick="{{ openCart }}" style="position:relative;display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0;background:var(--pri-t,#FFF1E8);padding:9px 16px;border-radius:var(--r-btn,12px)"><span style="font-size:19px"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:-0.14em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-cart"/></svg></span><span style="font-size:14px;font-weight:700;color:var(--ink,#1B1A18)">CHF 38.20</span><span style="position:absolute;top:-6px;left:24px;background:var(--accent-bg,var(--pri,#F2660F));color:#fff;font-size:11px;font-weight:800;width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span></div>
             </div>
@@ -156,7 +157,7 @@
               </aside>
               </sc-if>
 
-              <div style="flex:3 1 540px;min-width:300px">
+              <div style="flex:3 1 {{ colHome }};min-width:300px">
                 <sc-if value="{{ homeA }}" hint-placeholder-val="{{ true }}">
                 <div style="background:var(--feature-bg,linear-gradient(120deg,var(--pri-t,#FFF1E8) 0%,var(--pri-h2,#FFE4D3) 100%));border-radius:20px;padding:42px 40px;display:flex;flex-direction:column;justify-content:center;min-height:240px;overflow:hidden">
                   <div style="font-size:13px;font-weight:800;color:var(--feature-ey,var(--pri,#F2660F));letter-spacing:.06em;margin-bottom:14px">SHOPPYPELLA’YA HOŞ GELDİNİZ</div>
@@ -175,8 +176,8 @@
                     <button onClick="{{ openCategory }}" style="border:none;cursor:pointer;font-family:inherit;background:var(--accent-bg,var(--pri,#F2660F));color:#fff;font-weight:700;font-size:15px;padding:13px 26px;border-radius:var(--r-btn,12px)">Ürünleri keşfet →</button>
                   </div>
                   <div style="flex:1 1 200px;min-width:180px;display:flex;gap:12px;justify-content:center">
-                    <div style="background:#fff;border-radius:var(--r-lg,16px);padding:12px;flex:1;display:flex;align-items:center;justify-content:center"><img src="assets/img01.jpeg" style="max-height:165px;max-width:100%;object-fit:contain;mix-blend-mode:multiply"/></div>
-                    <div style="background:#fff;border-radius:var(--r-lg,16px);padding:12px;flex:1;display:flex;align-items:center;justify-content:center"><img src="assets/img02.jpeg" style="max-height:165px;max-width:100%;object-fit:contain;mix-blend-mode:multiply"/></div>
+                    <div style="background:#fff;border-radius:var(--r-lg,16px);padding:12px;flex:1;display:flex;align-items:center;justify-content:center"><img src="assets/img01.jpeg" style="max-height:165px;max-width:100%;object-fit:contain;mix-blend-mode:multiply" loading="lazy" decoding="async"/></div>
+                    <div style="background:#fff;border-radius:var(--r-lg,16px);padding:12px;flex:1;display:flex;align-items:center;justify-content:center"><img src="assets/img02.jpeg" style="max-height:165px;max-width:100%;object-fit:contain;mix-blend-mode:multiply" loading="lazy" decoding="async"/></div>
                   </div>
                 </div>
                 </sc-if>
@@ -249,7 +250,7 @@
                 </sc-for>
               </div>
 
-              <div style="flex:3 1 480px;min-width:300px">
+              <div style="flex:3 1 {{ colCat }};min-width:300px">
                 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#FAF8F5;border:1px solid #ECE9E4;border-radius:var(--r-btn,12px);padding:12px 16px;margin-bottom:16px">
                   <div style="font-size:13.5px;color:#6E6A64"><b style="color:var(--ink,#1B1A18)">9</b> / 248 ürün</div>
                   <div style="display:flex;align-items:center;gap:9px"><span style="font-size:13px;color:#6E6A64;font-weight:600">Sırala:</span><div style="background:#fff;border:1px solid #E2DDD5;border-radius:9px;padding:8px 14px;font-size:13.5px;font-weight:600">Popülerlik ▾</div></div>
@@ -279,8 +280,8 @@
             <div style="font-size:12.5px;color:#9A958D;margin-bottom:16px"><span onClick="{{ openHome }}" style="cursor:pointer">Ana Sayfa</span> › <span onClick="{{ openCategory }}" style="cursor:pointer">Oda Kokuları</span> › <span style="color:var(--ink,#1B1A18);font-weight:600">London Blue 250 ml</span></div>
 
             <div style="display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start">
-              <div style="flex:1 1 360px;min-width:280px;display:flex;gap:14px;flex-direction:row-reverse">
-                <div style="flex:1;background:#FAF8F5;border:1px solid #ECE9E4;border-radius:18px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:28px;position:relative"><span style="position:absolute;top:14px;left:14px;background:var(--accent-bg,var(--pri,#F2660F));color:#fff;font-size:12px;font-weight:800;padding:5px 11px;border-radius:8px">−24%</span><img src="assets/img01.jpeg" style="max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply"/></div>
+              <div style="flex:1 1 {{ colPdp }};min-width:280px;display:flex;gap:14px;flex-direction:row-reverse">
+                <div style="flex:1;background:#FAF8F5;border:1px solid #ECE9E4;border-radius:18px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:28px;position:relative"><span style="position:absolute;top:14px;left:14px;background:var(--accent-bg,var(--pri,#F2660F));color:#fff;font-size:12px;font-weight:800;padding:5px 11px;border-radius:8px">−24%</span><img src="assets/img01.jpeg" style="max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply" loading="lazy" decoding="async"/></div>
                 <div style="display:flex;flex-direction:column;gap:10px;width:68px;flex-shrink:0">
                   <sc-for list="{{ pdpThumbs }}" as="t" hint-placeholder-count="4">
                     <div style="width:68px;height:68px;border:1.5px solid {{ t.bc }};border-radius:11px;background:#FAF8F5;display:flex;align-items:center;justify-content:center;padding:6px;cursor:pointer"><dc-import name="Thumb" src="{{ t.img }}" hint-size="100%,100%" style="width:100%;height:100%"></dc-import></div>
@@ -288,13 +289,13 @@
                 </div>
               </div>
 
-              <div style="flex:1 1 360px;min-width:300px">
+              <div style="flex:1 1 {{ colPdp }};min-width:300px">
                 <div onClick="{{ openStore }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:10px"><div style="width:26px;height:26px;border-radius:7px;background:var(--pri-t,#FFF1E8);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--pri,#F2660F);font-size:14px">P</div><span style="font-size:13.5px;font-weight:700;color:var(--pri,#F2660F)">Pella Home</span><span style="background:var(--ink,#1B1A18);color:#fff;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px">✓ Onaylı</span></div>
                 <h1 style="font-size:27px;font-weight:900;letter-spacing:-.01em;line-height:1.15;margin:0 0 12px">Oda Kokusu „London Blue" – Oda &amp; Tekstil Parfümü 250 ml</h1>
                 <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap"><span style="color:var(--pri,#F2660F);font-size:15px">★★★★★</span><span style="font-weight:800;font-size:14px">4.7</span><span style="font-size:13.5px;color:#6E6A64">128 Yorumlar</span><span style="color:#D8D3CB">|</span><span style="font-size:13.5px;color:#6E6A64">340+ satıldı</span></div>
 
                 <sc-if value="{{ pdpA }}" hint-placeholder-val="{{ true }}">
-                  <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px"><span style="font-size:34px;font-weight:900;color:#D92D20">CHF 12.90</span><span style="font-size:17px;color:#B8B3AB;text-decoration:line-through">CHF 16.90</span><span style="background:var(--pri-t,#FFF1E8);color:var(--pri,#F2660F);font-size:13px;font-weight:800;padding:4px 10px;border-radius:7px">CHF 4.– tasarruf</span></div>
+                  <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap"><span style="font-size:34px;font-weight:900;white-space:nowrap;color:#D92D20">CHF 12.90</span><span style="font-size:17px;white-space:nowrap;color:#B8B3AB;text-decoration:line-through">CHF 16.90</span><span style="background:var(--pri-t,#FFF1E8);color:var(--pri,#F2660F);font-size:13px;font-weight:800;padding:4px 10px;border-radius:7px">CHF 4.– tasarruf</span></div>
                   <div style="font-size:12.5px;color:#9A958D;margin-bottom:20px">KDV dahil · kargo hariç</div>
                   <div style="font-size:13px;font-weight:700;margin-bottom:10px">Koku</div>
                   <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px">
@@ -333,7 +334,7 @@
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:36px;align-items:flex-start">
-              <div style="flex:2 1 420px;min-width:300px">
+              <div style="flex:2 1 {{ colStore }};min-width:300px">
                 <div style="display:flex;gap:24px;border-bottom:1px solid #ECE9E4;margin-bottom:18px"><span style="font-size:15px;font-weight:800;padding-bottom:12px;border-bottom:2.5px solid var(--pri,#F2660F)">Açıklama</span><span style="font-size:15px;font-weight:600;color:#9A958D;padding-bottom:12px">Yorumlar (128)</span><span style="font-size:15px;font-weight:600;color:#9A958D;padding-bottom:12px">Kargo</span></div>
                 <p style="font-size:14.5px;line-height:1.7;color:#4a4742;margin:0 0 14px">„London Blue" oda ve tekstil parfümü evinize uzun süre kalıcı, ferah bir koku katar. İnce sprey formülü perdeler, döşemeler, nevresimler ve oda havası için uygundur – her kullanımda 24 saate kadar ferahlık.</p>
                 <p style="font-size:14.5px;line-height:1.7;color:#4a4742;margin:0 0 22px">Dermatolojik olarak güvenli, tekstilde leke bırakmaz ve kullanımı ekonomiktir. 250 ml yaklaşık 300 sıkım için yeterlidir.</p>
@@ -379,7 +380,7 @@
               <div style="display:flex;gap:24px;border-bottom:1px solid #ECE9E4;margin:18px 0 22px;flex-wrap:wrap"><span style="font-size:15px;font-weight:800;padding-bottom:12px;border-bottom:2.5px solid var(--pri,#F2660F)">Tüm Ürünler</span><span style="font-size:15px;font-weight:600;color:#9A958D;padding-bottom:12px">Çok Satanlar</span><span style="font-size:15px;font-weight:600;color:#9A958D;padding-bottom:12px">Hakkımızda</span><span style="font-size:15px;font-weight:600;color:#9A958D;padding-bottom:12px">Yorumlar</span></div>
 
               <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:22px">
-                <div onClick="{{ openProduct }}" style="flex:2 1 320px;min-width:280px;background:linear-gradient(120deg,var(--pri-t,#FFF1E8),var(--pri-t2,#FFF8F2));border:1px solid var(--pri-bd,#F3E1D2);border-radius:var(--r-lg,16px);padding:24px;display:flex;align-items:center;gap:18px;cursor:pointer"><img src="assets/img01.jpeg" style="width:120px;height:120px;object-fit:contain;mix-blend-mode:multiply"/><div><div style="font-size:12px;font-weight:800;color:var(--pri,#F2660F);letter-spacing:.05em">EN ÇOK SATAN</div><div style="font-size:19px;font-weight:800;margin:6px 0;line-height:1.2">Oda Kokuları 250 ml</div><div style="font-size:13.5px;color:#6E6A64">London Blue · Rose Paris · CHF 12.90’dan</div></div></div>
+                <div onClick="{{ openProduct }}" style="flex:2 1 320px;min-width:280px;background:linear-gradient(120deg,var(--pri-t,#FFF1E8),var(--pri-t2,#FFF8F2));border:1px solid var(--pri-bd,#F3E1D2);border-radius:var(--r-lg,16px);padding:24px;display:flex;align-items:center;gap:18px;cursor:pointer"><img src="assets/img01.jpeg" style="width:120px;height:120px;object-fit:contain;mix-blend-mode:multiply" loading="lazy" decoding="async"/><div><div style="font-size:12px;font-weight:800;color:var(--pri,#F2660F);letter-spacing:.05em">EN ÇOK SATAN</div><div style="font-size:19px;font-weight:800;margin:6px 0;line-height:1.2">Oda Kokuları 250 ml</div><div style="font-size:13.5px;color:#6E6A64">London Blue · Rose Paris · CHF 12.90’dan</div></div></div>
                 <div style="flex:1 1 200px;min-width:180px;background:#FAF8F5;border:1px solid #ECE9E4;border-radius:var(--r-lg,16px);padding:20px;display:flex;flex-direction:column;justify-content:center"><div style="font-size:13px;font-weight:800;margin-bottom:8px">Pella Home Hakkında</div><div style="font-size:13px;line-height:1.55;color:#6E6A64">Ev &amp; temizlik ürünleri için aile işletmesi. 2021’den beri Shoppypella’da. „Hayatınızı kolaylaştıran marka."</div></div>
               </div>
 
@@ -399,7 +400,7 @@
             </div>
 
             <div style="display:flex;flex-wrap:wrap">
-              <div style="flex:2 1 460px;min-width:320px;padding:30px 28px">
+              <div style="flex:2 1 {{ colSignup }};min-width:320px;padding:30px 28px">
                 <h1 style="font-size:26px;font-weight:900;letter-spacing:-.01em;margin:0 0 4px">Satıcı ol</h1>
                 <div style="font-size:14px;color:#6E6A64;margin-bottom:24px">Birkaç dakikada hazır – mağazanızı 48 saatte açın.</div>
 
@@ -448,13 +449,13 @@
                 <div style="margin-top:14px;background:linear-gradient(135deg,var(--pri-t,#FFF1E8),var(--pri-t2,#FFF8F2));border:1px solid var(--pri-bd,#F3E1D2);border-radius:var(--r-btn,12px);padding:15px"><div style="font-size:13px;font-weight:800">Mağaza Planı</div><div style="font-size:12px;color:#6E6A64;margin:4px 0 10px">Basic · 5% Komisyon</div><div style="font-size:12px;font-weight:700;color:var(--pri,#F2660F);cursor:pointer">Plus’a yükselt →</div></div>
               </div>
 
-              <div style="flex:4 1 520px;min-width:300px;padding:22px 24px">
+              <div style="flex:4 1 {{ colDash }};min-width:300px;padding:22px 24px">
                 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px"><div><h1 style="font-size:23px;font-weight:900;margin:0">Tekrar hoş geldin, Atiye</h1><div style="font-size:13.5px;color:#6E6A64;margin-top:3px">Mağazanızın bugünkü durumu.</div></div><div style="background:#fff;border:1px solid #E2DDD5;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:600">Son 7 gün ▾</div></div>
 
                 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><div style="flex:1 1 240px;background:#fff;border:1px solid var(--pri-bd,#F1D9C4);border-left:4px solid var(--pri,#F2660F);border-radius:var(--r-btn,12px);padding:13px 16px;display:flex;align-items:center;gap:11px"><span style="font-size:19px"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:-0.14em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-package"/></svg></span><div style="font-size:13px;color:#4a4742"><b>2 Siparişler</b> kargo bekliyor</div><span style="margin-left:auto;font-size:12.5px;font-weight:700;color:var(--pri,#F2660F);cursor:pointer">İşle →</span></div><div style="flex:1 1 240px;background:#fff;border:1px solid #ECE9E4;border-radius:var(--r-btn,12px);padding:13px 16px;display:flex;align-items:center;gap:11px"><span style="font-size:19px"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:-0.14em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-alert"/></svg></span><div style="font-size:13px;color:#4a4742"><b>3 ürün</b> düşük stokta</div></div></div>
 
                 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px">
-                  <sc-for list="{{ dashKpis }}" as="k" hint-placeholder-count="4"><div style="flex:1 1 150px;min-width:140px;background:#fff;border:1px solid #ECE9E4;border-radius:var(--r-md,14px);padding:16px 18px"><div style="font-size:12.5px;color:#6E6A64;font-weight:600">{{ k.k }}</div><div style="font-size:25px;font-weight:900;margin:5px 0 4px;letter-spacing:-.01em">{{ k.v }}</div><div style="font-size:12px;font-weight:700;color:#2E7D5B">▲ {{ k.d }}</div></div></sc-for>
+                  <sc-for list="{{ dashKpis }}" as="k" hint-placeholder-count="4"><div style="flex:1 1 {{ kpiBasis }};min-width:140px;background:#fff;border:1px solid #ECE9E4;border-radius:var(--r-md,14px);padding:16px 18px"><div style="font-size:12.5px;color:#6E6A64;font-weight:600">{{ k.k }}</div><div style="font-size:25px;font-weight:900;margin:5px 0 4px;letter-spacing:-.01em">{{ k.v }}</div><div style="font-size:12px;font-weight:700;color:#2E7D5B">▲ {{ k.d }}</div></div></sc-for>
                 </div>
 
                 <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px">
@@ -504,7 +505,7 @@
                 </div>
               </div>
 
-              <div style="flex:3 1 460px;min-width:300px">
+              <div style="flex:3 1 {{ colAcct }};min-width:300px">
                 <h1 style="font-size:24px;font-weight:900;margin:0 0 4px">Merhaba Maria</h1>
                 <div style="font-size:14px;color:#6E6A64;margin-bottom:18px">Sizi tekrar görmek güzel. İşte özetiniz.</div>
 
@@ -517,7 +518,7 @@
                   <sc-for list="{{ accountOrders }}" as="o" hint-placeholder-count="3">
                     <div style="border:1px solid #ECE9E4;border-radius:var(--r-md,14px);padding:15px;display:flex;align-items:center;gap:15px;flex-wrap:wrap">
                       <div style="width:58px;height:58px;background:#FAF8F5;border:1px solid #ECE9E4;border-radius:11px;display:flex;align-items:center;justify-content:center;padding:6px;flex-shrink:0"><dc-import name="Thumb" src="{{ o.img }}" hint-size="100%,100%" style="width:100%;height:100%"></dc-import></div>
-                      <div style="flex:2 1 180px;min-width:160px"><div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:4px"><span style="font-size:12.5px;font-weight:700;color:#9A958D">{{ o.id }}</span><span style="background:{{ o.sb }};color:{{ o.sc }};font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px">{{ o.s }}</span></div><div style="font-size:14px;font-weight:700;line-height:1.3">{{ o.p }}</div><div style="font-size:12.5px;color:#9A958D;margin-top:2px">Sipariş tarihi {{ o.date }}</div><sc-if value="{{ o.track }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:7px;margin-top:7px;font-size:12.5px;flex-wrap:wrap"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--pri,#F2660F);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-truck"/></svg><span style="color:#6E6A64">{{ o.carrier }}</span><span style="color:var(--pri,#F2660F);font-weight:700;text-decoration:underline;cursor:pointer">{{ o.track }}</span></div></sc-if></div>
+                      <div style="flex:2 1 180px;min-width:160px"><div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:4px"><span style="font-size:12.5px;font-weight:700;color:#9A958D">{{ o.id }}</span><span style="background:{{ o.sb }};color:{{ o.sc }};font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px">{{ o.s }}</span></div><div style="font-size:14px;font-weight:700;line-height:1.3">{{ o.p }}</div><div style="font-size:12.5px;color:#9A958D;margin-top:2px">Sipariş tarihi {{ o.date }}</div><sc-if value="{{ o.track }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:7px;margin-top:7px;font-size:12.5px;flex-wrap:wrap"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--pri,#F2660F);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-truck"/></svg><span style="color:#6E6A64">{{ o.carrier }}</span><a href="{{ o.trackUrl }}" target="_blank" rel="noopener noreferrer" style="color:var(--pri,#F2660F);font-weight:700;text-decoration:underline;cursor:pointer">{{ o.track }}</a></div></sc-if></div>
                       <div style="text-align:right;flex:1 1 90px"><div style="font-size:15px;font-weight:800">{{ o.a }}</div></div>
                       <button onClick="{{ openProduct }}" style="cursor:pointer;font-family:inherit;background:#fff;border:1.5px solid #E2DDD5;color:var(--ink,#1B1A18);font-weight:700;font-size:13px;padding:10px 16px;border-radius:10px">{{ o.cta }}</button>
                     </div>
@@ -545,7 +546,7 @@
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start">
-              <div style="flex:2 1 420px;min-width:300px">
+              <div style="flex:2 1 {{ colCart }};min-width:300px">
                 <div style="border:1px solid #ECE9E4;border-radius:var(--r-lg,16px);overflow:hidden;margin-bottom:18px">
                   <div style="background:#FAF8F5;padding:13px 18px;font-size:13.5px;font-weight:800;display:flex;align-items:center;gap:9px;border-bottom:1px solid #ECE9E4"><span style="width:22px;height:22px;border-radius:6px;background:var(--pri-t,#FFF1E8);color:var(--pri,#F2660F);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px">P</span>Pella Home <span style="font-weight:600;color:#9A958D;font-size:12.5px">· 3 ürün · Zürih’ten gönderim</span></div>
                   <sc-for list="{{ cartItems }}" as="i" hint-placeholder-count="3">
@@ -699,6 +700,8 @@ class Component extends DCLogic {
     const sellerNav=[['sellerSignup','Kayıt'],['sellerPanel','Satıcı Paneli']].map(x=>navItem(x[0],x[1]));
 
     const isMobile=st.device==='mobile';
+    const isTablet=st.device==='tablet';
+    const isDesk=st.device==='desktop';
     const seg=(on)=>on?'#fff':'transparent';
     const segf=(on)=>on?'var(--ink,#1B1A18)':'#9A958D';
     const hasVariant=(st.screen==='home'||st.screen==='product');
@@ -735,9 +738,9 @@ class Component extends DCLogic {
     }));
     const sellerBenefits=[
       {i:'globe',t:'İsviçre pazarına erişim',d:'Tüm İsviçre’deki binlerce eve satış yapın.'},
-      {i:'package',t:'Kargo &amp; Lager optional',d:'Kendi gönderiminiz ya da Shoppypella ile kargo – siz karar verin.'},
+      {i:'package',t:'Kargo & Depo opsiyonel',d:'Kendi gönderiminiz ya da Shoppypella ile kargo – siz karar verin.'},
       {i:'card',t:'Haftalık ödeme',d:'İsviçre banka hesabınıza güvenli ödemeler.'},
-      {i:'trending',t:'Tools &amp; Insights',d:'Panel, reklam ve satış istatistikleri dahil.'}
+      {i:'trending',t:'Araçlar & Analizler',d:'Panel, reklam ve satış istatistikleri dahil.'}
     ];
     const sellerKpis=[{v:'0.–',k:'Başlangıç ücreti'},{v:'5%',k:'Komisyon'},{v:'48 saat',k:'Aktivasyon'}];
     const dashNav=[['chart','Genel Bakış',true],['package','Ürünler',false],['receipt','Siparişler',false],['truck','Kargo',false],['card','Ödemeler',false],['star','Yorumlar',false],['sparkles','Influencer',false],['settings','Ayarlar',false]].map(x=>({i:x[0],t:x[1],bg:x[2]?'var(--pri-t,#FFF1E8)':'transparent',fg:x[2]?'var(--pri,#F2660F)':'#6E6A64',fw:x[2]?'800':'600'}));
@@ -781,11 +784,13 @@ class Component extends DCLogic {
       {code:'MELIS10',name:'@melisbeauty',platform:'YouTube',pbg:'#FDEBEA',pfg:'#C4302B',uses:64,rev:"CHF 1'410",disc:'%10'}
     ];
     const accountNav=[['home','Genel Bakış',true],['package','Siparişlerim',false],['pin','Adresler',false],['card','Ödeme Yöntemleri',false],['heart','İstek Listesi',false],['star','Meine Yorumlar',false],['settings','Ayarlar',false]].map(x=>({i:x[0],t:x[1],bg:x[2]?'var(--pri-t,#FFF1E8)':'transparent',fg:x[2]?'var(--pri,#F2660F)':'#4a4742',fw:x[2]?'800':'600'}));
+    const CARRIERS={'Swiss Post':'https://service.post.ch/ekp-web/ui/entry/search/','DPD':'https://tracking.dpd.de/status/tr_TR/parcel/','DHL':'https://www.dhl.com/tr-tr/home/tracking.html?tracking-id='};
     const accountOrders=[
       {id:'#SP-22910',date:'24 Haziran 2026',img:'assets/img06.jpeg',p:'Mikrofiber Bez 8’li Set',extra:'+ 1 ürün daha',a:'CHF 23.80',sb:'var(--pri-t,#FFF1E8)',sc:'var(--pri,#F2660F)',s:'Yolda',track:'99.00.123456.78',carrier:'Swiss Post',cta:'Kargo takip'},
       {id:'#SP-22744',date:'12 Haziran 2026',img:'assets/img01.jpeg',p:'Oda Kokusu London Blue 250 ml',extra:'',a:'CHF 12.90',sb:'#E9F3EE',sc:'#2E7D5B',s:'Teslim edildi',cta:'Tekrar al'},
       {id:'#SP-22501',date:'2 Haziran 2026',img:'assets/img05.jpeg',p:'Mikrofiber Mutfak Bezi 3’lü',extra:'',a:'CHF 8.40',sb:'#E9F3EE',sc:'#2E7D5B',s:'Teslim edildi',cta:'Değerlendir'}
     ];
+    accountOrders.forEach(o=>{ o.trackUrl = o.track ? (CARRIERS[o.carrier]||'')+o.track : ''; });
     const acctStats=[{v:'14',k:'Siparişler'},{v:'CHF 312',k:'Tasarruf'},{v:'8',k:'İstek Listesi'},{v:'2',k:'Yorumlar'}];
     const fld=(label,val,flex,filled,icon)=>({label,val,flex:flex||'1 1 100%',color:filled?'var(--ink,#1B1A18)':'#B8B3AB',icon:icon||''});
     const signupFields=[
@@ -813,15 +818,19 @@ class Component extends DCLogic {
       onFont:onSel('fontSel'), onRadius:onSel('radiusSel'), onBg:onSel('bgSel'), onAccent:onSel('accentSel'),
       influencers, buyerNav, sellerNav, deals, popular, newIn, usps, filterGroups, pdpThumbs, scents, specs, reviews, ratingBars, storeStats, sellerSteps, sellerBenefits, sellerKpis, signupFields, goSellerPanel:this.go('sellerPanel'), dashNav, dashKpis, salesBars, dashOrders, dashProducts, accountNav, accountOrders, acctStats, cartItems, checkSteps, payMethods, summaryRows,
       currentLabel:meta[st.screen].label, currentPath:meta[st.screen].path,
-      frameWidth:isMobile?'402px':'1240px',
+      frameWidth:isMobile?'402px':(isTablet?'834px':'1240px'),
       frameRadius:isMobile?'18px':'16px',
-      viewportH:isMobile?'820px':'760px',
-      setDesktop:()=>this.setState({device:'desktop'}), setMobile:()=>this.setState({device:'mobile'}),
-      dDesk:seg(!isMobile),fDesk:segf(!isMobile),dMob:seg(isMobile),fMob:segf(isMobile),
+      viewportH:isMobile?'820px':(isTablet?'1000px':'760px'),
+      setDesktop:()=>this.setState({device:'desktop'}), setTablet:()=>this.setState({device:'tablet'}), setMobile:()=>this.setState({device:'mobile'}),
+      dDesk:seg(isDesk),fDesk:segf(isDesk),dTab:seg(isTablet),fTab:segf(isTablet),dMob:seg(isMobile),fMob:segf(isMobile),
+      colHome:isTablet?'420px':'540px', colCat:isTablet?'380px':'480px', colPdp:isTablet?'320px':'360px',
+      colStore:isTablet?'340px':'420px', colSignup:isTablet?'380px':'460px', colDash:isTablet?'400px':'520px',
+      colAcct:isTablet?'380px':'460px', colCart:isTablet?'360px':'420px',
+      kpiBasis:isTablet?'220px':'150px',
       hasVariant, setVarA:setVar('a'), setVarB:setVar('b'),
       vAbg:curVar==='a'?'#fff':'transparent',vAfg:curVar==='a'?'var(--pri,#F2660F)':'#9A958D',
       vBbg:curVar==='b'?'#fff':'transparent',vBfg:curVar==='b'?'var(--pri,#F2660F)':'#9A958D',
-      isMobile, isDesktop:!isMobile, buyerShell,
+      isMobile, isTablet, isDesk, isDesktop:!isMobile, buyerShell,
       isHome:st.screen==='home', isCategory:st.screen==='category', isProduct:st.screen==='product',
       isStore:st.screen==='store', isAccount:st.screen==='account', isCart:st.screen==='cart',
       isSellerSignup:st.screen==='sellerSignup', isSellerPanel:st.screen==='sellerPanel',

@@ -1,7 +1,7 @@
 # Shoppypella — interaktif prototip
 
-Bir İsviçre pazaryeri konsepti için tıklanabilir prototip. 8 ekran, masaüstü ve
-mobil görünüm, tamamı Türkçe.
+Bir İsviçre pazaryeri konsepti için tıklanabilir prototip. 8 ekran; masaüstü,
+tablet ve mobil görünüm; tamamı Türkçe.
 
 **Canlı:** https://bursadev.github.io/shoppypella/
 
@@ -90,4 +90,41 @@ talimatlarına çevirir. Prototipte görünenler:
 
 Bunların arkasındaki gerçek sistemler (kampanya kodu CRUD'u ve atıfı, taşıyıcı
 API'leri, SSL/HSTS, çerez onayı, SEO) üretim işidir; prototip yalnızca arayüzü
-gösterir.
+gösterir. Üretim sitesi `shoppypella.com` ayrı bir WordPress/WooCommerce
+kurulumudur ve bu repoda değildir.
+
+### Yasal sayfa adresleri
+
+Footer'daki yasal bağlantılar aşağıdaki adreslere gider. Üretimde bu slug'larla
+sayfa açılması gerekir:
+
+```
+/gizlilik-politikasi/          /kullanim-kosullari/
+/kvkk-veri-koruma/             /mesafeli-satis-sozlesmesi/
+/cerez-politikasi/             /iade-degisim-politikasi/
+                               /kargo-teslimat-kosullari/
+```
+
+## Cihaz modları
+
+Navigatördeki Desktop / Tablet / Mobil düğmesi çerçeve genişliğini değiştirir:
+1240 px, 834 px ve 402 px. Tablet modunda başlıktaki "Satıcı ol" bağlantısı
+gizlenir, iki sütunlu yerleşimlerin flex tabanları küçülür ve panel KPI'ları
+2×2 dizilir — böylece ara genişliklerde hiçbir sütun alt satıra düşmez.
+
+Prototipin kendisi sabit genişlikli bir çerçeve olduğu için tarayıcı penceresini
+daraltmak tablet modunu tetiklemez; tablet yerleşimini görmek için düğmeyi
+kullanın. Üretimde bunların karşılığı gerçek CSS breakpoint'leridir.
+
+## Tasarım paketine göre farklarımız
+
+`src/handoff/` teslim edilen paketin kopyasıdır; üzerine yapılan düzeltmeler:
+
+- **Tablet modu** — üçüncü bir cihaz genişliği ve ona bağlı sütun tabanları.
+- **`loading="lazy"` + `decoding="async"`** — tüm ürün görsellerinde.
+- **Gerçek bağlantılar** — footer'daki yasal metinler ve sipariş takip numarası
+  artık `<a>`; takip numarası taşıyıcının (Swiss Post / DPD / DHL) sorgu
+  adresine gider. Sosyal medya bağlantıları yeni sekmede açılır.
+- **Fiyatlar satır ortasından bölünmüyor** — dar kartlarda `white-space:nowrap`.
+- **`&amp;` hatası** — satıcı kaydı sayfasındaki iki başlık `&amp;` yerine artık
+  `&` gösteriyor (aynı iki başlık Türkçeleştirildi).
