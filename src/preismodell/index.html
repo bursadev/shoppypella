@@ -406,7 +406,7 @@ const t = k => T[lang][k] ?? T.de[k] ?? k;
 const fill = (k, o) => t(k).replace(/\{(\w+)\}/g, (_, n) => o[n] ?? '');
 
 /* ---------- model ---------- */
-const DEFAULTS = { pJ:8240, pI:10780, pS:13860, mJ:5, mI:3, mS:2.25, hJ:18, hI:30, hS:48, fJ:3760, fI:4870, fS:6240, relDisc:13.8, term:36, gmv:300000,
+const DEFAULTS = { pJ:8240, pI:10780, pS:13860, mJ:5, mI:3, mS:2.25, hJ:18, hI:30, hS:48, fJ:1260, fI:1620, fS:2080, relDisc:13.8, term:36, gmv:300000,
   w_shell:20, w_shop:15, w_checkout:20, w_account:10, w_seller:20, w_admin:15 };
 const OPTS = ['J','I','S'];
 const PHASES = ['shell','shop','checkout','account','seller','admin'];
@@ -420,9 +420,9 @@ const LEVERS = [
 const ADV = PHASES.map(p => ({id:'w_'+p, min:0, max:50, step:1}));
 let P = {...DEFAULTS};
 let state = { opt:'S', share:10, on:{shell:true,shop:true,checkout:true,account:true,seller:true,admin:true} };
-try { const s = JSON.parse(localStorage.getItem('sp-pm-v3') || 'null'); if (s && s.P) { P = {...DEFAULTS, ...s.P}; state = {...state, ...s.state, on:{...state.on, ...(s.state?.on||{})}}; } } catch (e) {}
+try { const s = JSON.parse(localStorage.getItem('sp-pm-v4') || 'null'); if (s && s.P) { P = {...DEFAULTS, ...s.P}; state = {...state, ...s.state, on:{...state.on, ...(s.state?.on||{})}}; } } catch (e) {}
 if (![0, 5, 10, 15].includes(state.share)) state.share = 10;
-const save = () => { try { localStorage.setItem('sp-pm-v3', JSON.stringify({P, state})); } catch (e) {} };
+const save = () => { try { localStorage.setItem('sp-pm-v4', JSON.stringify({P, state})); } catch (e) {} };
 
 const fullPrice = o => P['p' + o];
 const SHARES = [0, 5, 10, 15];
