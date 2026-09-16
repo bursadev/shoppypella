@@ -4,6 +4,7 @@ Bir İsviçre pazaryeri konsepti için tıklanabilir prototip. 8 ekran; masaüst
 tablet ve mobil görünüm; tamamı Türkçe.
 
 **Canlı:** https://bursadev.github.io/shoppypella/
+**Preismodell (fiyat modeli):** https://bursadev.github.io/shoppypella/preismodell/
 
 | Ekran | Ekran |
 | --- | --- |
@@ -21,11 +22,12 @@ konulmuş temsili örneklerdir.
 ## Repo yapısı
 
 ```
-docs/           GitHub Pages'in yayınladığı site (üretilmiş — elle düzenlemeyin)
-src/handoff/    Tasarım paketi: prototipin kaynağı (Design Component'ler + görseller)
-src/fonts/      Kendi sunucumuzdan servis edilen woff2 dosyaları + @font-face css
-src/photos/     Orijinal ürün fotoğrafları (arşiv; derlemede kullanılmıyor)
-build.py        docs/ dizinini üreten betik
+docs/            GitHub Pages'in yayınladığı site (üretilmiş — elle düzenlemeyin)
+src/handoff/     Tasarım paketi: prototipin kaynağı (Design Component'ler + görseller)
+src/preismodell/ Fiyat modeli sayfası (tek dosya, çalışma zamanı yok) → docs/preismodell/
+src/fonts/       Kendi sunucumuzdan servis edilen woff2 dosyaları + @font-face css
+src/photos/      Orijinal ürün fotoğrafları (arşiv; derlemede kullanılmıyor)
+build.py         docs/ dizinini üreten betik
 ```
 
 ## Derleme
@@ -68,6 +70,17 @@ konur.
 
 Çalışma zamanı React, ReactDOM ve Babel'i unpkg'den yükler, yani sayfanın
 internet bağlantısına ihtiyacı vardır.
+
+## Fiyat modeli
+
+`src/preismodell/index.html` teklif görüşmesi için etkileşimli fiyat modelidir:
+üç yol (junior / orta düzey / senior), aşama başına **tavan fiyat**, senior için
+%5 / %10 / %15 ciro payı seçeneği ve tek tek seçilebilen aşamalar. Almanca,
+İngilizce ve Türkçe; dil sağ üstten değişir. Sayfa tek dosyadır, kütüphane
+yüklemez; `build.py` Google Fonts bağlantılarını `src/fonts` içindeki Hanken
+Grotesk ve IBM Plex Mono kurallarıyla değiştirip `docs/preismodell/` altına
+yazar. "Anpassen" altındaki kaydırıcılar tarayıcıda kalır, sunucuya bir şey
+gitmez; aşama ağırlıkları yalnızca adrese `#modell` eklenince görünür.
 
 ## Müşteri talepleri
 

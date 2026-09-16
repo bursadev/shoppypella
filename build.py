@@ -12,7 +12,9 @@ What this script changes:
     title, description, social preview and favicon;
   * the two Google Fonts stylesheet links are swapped for the self-hosted
     @font-face rules in `src/fonts` -- the site then needs no font CDN;
-  * product photos are downscaled for the web.
+  * product photos are downscaled for the web;
+  * the price-model page in `src/preismodell` ships as `docs/preismodell/`,
+    with the same self-hosted fonts (Hanken Grotesk + IBM Plex Mono).
 
 Everything else is copied verbatim, so the handoff stays the source of truth.
 """
@@ -24,6 +26,7 @@ FONT_DIR = "src/fonts"
 OUT      = "docs"
 ROOT     = "Shoppypella.dc.html"          # the root component -> index.html
 SIBLINGS = ["ProductCard.dc.html", "Footer.dc.html", "Thumb.dc.html"]
+PRICE    = "src/preismodell/index.html"   # -> docs/preismodell/index.html
 MAX_PHOTO = (900, 1350)
 
 HEAD = '''<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,9 +48,9 @@ GOOGLE_FONTS = re.compile(
     r'[ \t]*<link[^>]*fonts\.(?:googleapis|gstatic)\.com[^>]*>\n', re.I)
 
 
-def self_hosted_fonts():
+def self_hosted_fonts(names=("hanken-grotesk.css", "theme-fonts.css")):
     css = []
-    for name in ("hanken-grotesk.css", "theme-fonts.css"):
+    for name in names:
         css.append("<style>\n%s\n</style>" %
                    open(f"{FONT_DIR}/{name}", encoding="utf-8").read().strip())
     return "\n".join(css) + "\n"
@@ -69,6 +72,19 @@ def build_index():
     with open(f"{OUT}/index.html", "w", encoding="utf-8") as f:
         f.write(html)
     return html
+
+
+def build_price_model():
+    """docs/preismodell/ -- a plain page, no runtime; fonts one level up."""
+    html = open(PRICE, encoding="utf-8").read()
+    html, n = GOOGLE_FONTS.subn("", html)
+    assert n == 3, f"expected 3 Google Fonts links in the price model, replaced {n}"
+    css = self_hosted_fonts(("hanken-grotesk.css", "ibm-plex-mono.css"))
+    css = css.replace('url("assets/fonts/', 'url("../assets/fonts/')
+    html = html.replace("<style>", css + "<style>", 1)
+    os.makedirs(f"{OUT}/preismodell", exist_ok=True)
+    with open(f"{OUT}/preismodell/index.html", "w", encoding="utf-8") as f:
+        f.write(html)
 
 
 def copy_asset(rel):
@@ -103,6 +119,7 @@ def main():
         shutil.copy(f"{HANDOFF}/{name}", f"{OUT}/{name}")
 
     html = build_index()
+    build_price_model()
 
     # Only the photos the prototype actually shows; the handoff carries spares.
     refs = set()
@@ -123,6 +140,7 @@ def main():
     for rel in sorted(refs - {"assets/favicon.svg"}):
         print(f"  {rel:<20} {os.path.getsize(OUT + '/' + rel):>8} bytes")
     print(f"index:      {os.path.getsize(OUT + '/index.html'):>8} bytes")
+    print(f"preismodell:{os.path.getsize(OUT + '/preismodell/index.html'):>8} bytes")
 
 
 main()

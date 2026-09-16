@@ -1,0 +1,4 @@
+/* IBM Plex Mono (OFL), subset to Latin, Latin Extended-A, punctuation, currency and a few symbols.
+   Regular also serves weight 500. */
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url("assets/fonts/ibm-plex-mono-400.woff2") format("woff2")}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/ibm-plex-mono-700.woff2") format("woff2")}

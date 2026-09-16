@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shoppypella — Preismodell</title>
+<meta name="description" content="Drei Wege zum Marktplatz: Kostendach je Phase, Umsatzbeteiligung, Phasen zum Auswählen. Deutsch, Englisch, Türkisch.">
+<meta property="og:title" content="Shoppypella — Preismodell">
+<meta property="og:description" content="Drei Wege zum Marktplatz: Kostendach je Phase, Umsatzbeteiligung, Phasen zum Auswählen.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/7c9f367a-5be1-4662-a0ca-ecb2545bfea1.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/5226e477-a6fe-46d2-955e-b2d6c13eeda8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/f9a9e7d3-46ba-4150-aeff-862f1f459d9d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/fddfcb2b-35cd-4c46-b133-5c8968ea97d2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/7c9f367a-5be1-4662-a0ca-ecb2545bfea1.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/5226e477-a6fe-46d2-955e-b2d6c13eeda8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/f9a9e7d3-46ba-4150-aeff-862f1f459d9d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/fddfcb2b-35cd-4c46-b133-5c8968ea97d2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/7c9f367a-5be1-4662-a0ca-ecb2545bfea1.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/5226e477-a6fe-46d2-955e-b2d6c13eeda8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/f9a9e7d3-46ba-4150-aeff-862f1f459d9d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/fddfcb2b-35cd-4c46-b133-5c8968ea97d2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/7c9f367a-5be1-4662-a0ca-ecb2545bfea1.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/5226e477-a6fe-46d2-955e-b2d6c13eeda8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/f9a9e7d3-46ba-4150-aeff-862f1f459d9d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/fddfcb2b-35cd-4c46-b133-5c8968ea97d2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/7c9f367a-5be1-4662-a0ca-ecb2545bfea1.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/5226e477-a6fe-46d2-955e-b2d6c13eeda8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/f9a9e7d3-46ba-4150-aeff-862f1f459d9d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/fddfcb2b-35cd-4c46-b133-5c8968ea97d2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/7c9f367a-5be1-4662-a0ca-ecb2545bfea1.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/5226e477-a6fe-46d2-955e-b2d6c13eeda8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/f9a9e7d3-46ba-4150-aeff-862f1f459d9d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/fddfcb2b-35cd-4c46-b133-5c8968ea97d2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+/* IBM Plex Mono (OFL), subset to Latin, Latin Extended-A, punctuation, currency and a few symbols.
+   Regular also serves weight 500. */
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url("../assets/fonts/ibm-plex-mono-400.woff2") format("woff2")}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url("../assets/fonts/ibm-plex-mono-700.woff2") format("woff2")}
+</style>
+<style>
+:root{
+  --paper:#FEFCFA; --canvas:#F6F3EF; --card:#FFFFFF; --ink:#1B1A18; --ink2:#4A4742; --body:#6E6A64; --muted:#9A958D; --faint:#B8B3AB;
+  --rule:#DAD5CD; --hair:#ECE9E4; --hair2:#F5F2EE; --soft:#FAF8F5; --accent:#F2660F; --accent-2:#D9540A; --tint:#FFF1E8; --tint-bd:#F6E1D0;
+  --ok:#2E7D5B; --warn:#C24A3A; --on-accent:#FFFFFF; --dark:#1B1A18; --dark-text:#FEFCFA; --dark-muted:#CFCAC3; --dark-line:#3A3733;
+  --hg:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --pm:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease-out:cubic-bezier(0.23,1,0.32,1); --ease-in-out:cubic-bezier(0.77,0,0.175,1);
+  --r-lg:20px; --r-md:14px; --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#151412; --canvas:#100F0E; --card:#1C1B19; --ink:#F5F2EE; --ink2:#D9D4CC; --body:#B3ADA4; --muted:#8A857D; --faint:#5F5A53;
+    --rule:#3A3733; --hair:#2A2825; --hair2:#232120; --soft:#1F1E1B; --tint:#2A1D14; --tint-bd:#4A2E1B; --on-accent:#FFFFFF;
+    --dark:#000000; --dark-text:#F5F2EE; --dark-muted:#A39E96; --dark-line:#2A2825;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151412; --canvas:#100F0E; --card:#1C1B19; --ink:#F5F2EE; --ink2:#D9D4CC; --body:#B3ADA4; --muted:#8A857D; --faint:#5F5A53;
+  --rule:#3A3733; --hair:#2A2825; --hair2:#232120; --soft:#1F1E1B; --tint:#2A1D14; --tint-bd:#4A2E1B; --on-accent:#FFFFFF;
+  --dark:#000000; --dark-text:#F5F2EE; --dark-muted:#A39E96; --dark-line:#2A2825;
+}
+*{box-sizing:border-box}
+html,body{background:var(--canvas)}
+body{margin:0;color:var(--ink);font-family:var(--hg);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-block:0 120px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+@media (min-width:768px){.wrap{padding-inline:32px}}
+h1,h2,h3{margin:0;color:var(--ink);text-wrap:balance}
+h1{font-size:clamp(38px,6vw,68px);font-weight:900;line-height:.95;letter-spacing:-0.025em;text-transform:uppercase}
+h1 span{color:var(--faint)}
+h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-0.015em;line-height:1.15}
+h3{font-size:17px;font-weight:800;letter-spacing:-0.01em;line-height:1.3}
+p{margin:0;color:var(--ink2)}
+.eyebrow{font-family:var(--pm);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+.mono{font-family:var(--pm);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.lead{font-size:18px;line-height:1.55;max-width:60ch;color:var(--ink2)}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--hair)}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:900;font-size:22px;letter-spacing:-0.02em}
+.mark i{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block}
+.top-actions{display:flex;gap:8px}
+.btn{appearance:none;border:0;font:inherit;font-weight:700;font-size:14px;line-height:20px;padding:9px 16px;border-radius:12px;cursor:pointer;background:var(--accent);color:var(--on-accent);transition:background-color .15s ease,transform .12s var(--ease-out),box-shadow .15s ease}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:var(--accent-2)}.btn.ghost:hover{background:var(--soft);color:var(--ink)}}
+.btn:focus-visible,.opt:focus-visible,input:focus-visible,.seg button:focus-visible,.row-check:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+.hero{padding-block:44px 28px;position:relative}
+@media (min-width:768px){.hero{padding-block:64px 36px}}
+.hero .lead{margin-top:18px}
+
+/* option cards */
+.opts{display:grid;gap:14px;margin-top:8px}
+@media (min-width:820px){.opts{grid-template-columns:repeat(3,1fr)}}
+.opt{appearance:none;text-align:left;font:inherit;color:var(--ink);background:var(--card);border:0;border-radius:var(--r-lg);padding:22px 22px 20px;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:6px;box-shadow:inset 0 0 0 1px var(--hair);transition:box-shadow .18s var(--ease-out),transform .12s var(--ease-out),background-color .3s ease}
+.opt::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--accent);opacity:0;transform:scaleX(.6);transition:opacity .2s ease,transform .25s var(--ease-out)}
+.opt.selected{box-shadow:inset 0 0 0 2px var(--accent)}
+.opt.selected::before{opacity:1;transform:none}
+@media (hover:hover) and (pointer:fine){.opt:not(.selected):hover{box-shadow:inset 0 0 0 1px var(--rule)}}
+.opt:active{transform:scale(.99)}
+.opt .who{font-family:var(--pm);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.opt.selected .who{color:var(--accent)}
+.opt .price{font-size:34px;font-weight:900;letter-spacing:-0.02em;line-height:1.05;font-variant-numeric:tabular-nums;padding:2px 6px;margin:0 -6px;border-radius:8px;transition:background-color .4s ease}
+.opt .price small{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:0;margin-left:6px;font-family:var(--pm)}
+.opt .dur{font-size:15px;color:var(--ink2);font-weight:700}
+.opt .rate{font-family:var(--pm);font-size:12.5px;color:var(--muted);margin-top:-2px}
+.opt .desc{font-size:14px;line-height:1.45;color:var(--body);margin-top:4px}
+.opt .badge{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:var(--pm);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--tint);color:var(--accent-2);border:1px solid var(--tint-bd);width:max-content;max-width:100%}
+.hot{background-color:var(--tint)}
+
+/* share block */
+.share{margin-top:18px;background:var(--dark);color:var(--dark-text);border-radius:var(--r-lg);padding:26px 22px;display:grid;gap:22px;transition:opacity .25s ease}
+@media (min-width:820px){.share{grid-template-columns:1.2fr 1fr 1fr;padding:30px 30px;align-items:start}}
+.share.off{opacity:.45}
+.share h3,.share .eyebrow{color:var(--dark-text)}
+.share .eyebrow{color:#FFB27A}
+.share p{color:var(--dark-muted);font-size:14px;line-height:1.5}
+.seg{display:inline-flex;background:#2A2825;border-radius:12px;padding:4px;gap:4px;margin-top:14px}
+.seg button{appearance:none;border:0;font:inherit;font-family:var(--pm);font-weight:700;font-size:14px;line-height:20px;padding:7px 16px;border-radius:9px;background:transparent;color:var(--dark-muted);cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.seg button.on{background:var(--accent);color:#fff}
+.seg button:disabled{opacity:.4;cursor:not-allowed}
+.share .v{font-size:30px;font-weight:900;letter-spacing:-0.02em;line-height:1.1;font-variant-numeric:tabular-nums;padding:2px 6px;margin:0 -6px;border-radius:8px;transition:background-color .4s ease}
+.share .v.hot{background-color:#3A2A1E}
+.share .l{font-size:13px;color:var(--dark-muted);margin-top:4px;line-height:1.45}
+.share .l b{color:var(--dark-text)}
+.share input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent) var(--p,0%),#3A3733 var(--p,0%));margin:14px 0 6px;cursor:pointer}
+.share input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--dark);box-shadow:0 0 0 2px var(--accent);transition:transform .15s var(--ease-out)}
+.share input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--dark);box-shadow:0 0 0 2px var(--accent)}
+@media (hover:hover) and (pointer:fine){.share input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}}
+
+/* phases */
+section.block{margin-top:44px}
+.block-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 24px;margin-bottom:16px}
+.block-head p{max-width:64ch;font-size:15px}
+.scroller{overflow-x:auto;margin-inline:-20px;padding-inline:20px;scrollbar-width:thin}
+@media (min-width:768px){.scroller{margin-inline:0;padding-inline:0}}
+table.ph{width:100%;min-width:720px;border-collapse:separate;border-spacing:0;background:var(--card);border-radius:var(--r-lg);box-shadow:inset 0 0 0 1px var(--hair);overflow:hidden}
+.ph th,.ph td{padding:14px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--hair)}
+.ph th{font-family:var(--pm);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:16px;padding-bottom:12px;background:var(--soft);cursor:pointer;transition:color .15s ease}
+.ph th.num,.ph td.num{text-align:right;white-space:nowrap}
+.ph th.sel{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+.ph th:first-child{cursor:default;width:44px}
+.ph td:first-child{width:44px}
+.ph td.name b{display:block;font-weight:800;color:var(--ink);letter-spacing:-0.005em}
+.ph td.name small{display:block;font-size:13px;line-height:1.45;color:var(--body);margin-top:2px;max-width:46ch}
+.ph td.num .c{font-family:var(--pm);font-weight:500;font-size:15px;color:var(--ink2);font-variant-numeric:tabular-nums;display:inline-block;padding:2px 6px;margin:-2px -6px;border-radius:6px;transition:background-color .4s ease,color .2s ease,opacity .25s ease}
+.ph td.num .w{display:block;font-size:12px;color:var(--muted);margin-top:3px;font-family:var(--pm)}
+.ph td.num.sel .c{color:var(--ink);font-weight:700}
+.ph tr.off td.name b,.ph tr.off td.name small{color:var(--faint);text-decoration:line-through;text-decoration-color:var(--rule)}
+.ph tr.off td.num .c,.ph tr.off td.num .w{opacity:.35}
+.ph tr.later td.name b{color:var(--muted)}
+.ph tr.later td.name small{color:var(--muted)}
+.ph tr.later td.num .c{color:var(--muted);font-weight:500}
+.ph tr.later td.num .w{opacity:.7}
+.later-tag{display:inline-block;vertical-align:2px;margin-left:8px;font-family:var(--pm);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted);border:1px solid var(--hair)}
+.ph tr:last-child td{border-bottom:0}
+.ph tfoot td{background:var(--soft);font-weight:800;border-top:2px solid var(--ink);border-bottom:0}
+.ph tfoot td.num .c{font-weight:800;color:var(--ink);font-size:17px}
+.ph tfoot td.num .w{color:var(--ink2)}
+.row-check{appearance:none;width:22px;height:22px;border-radius:7px;border:2px solid var(--rule);background:var(--card);cursor:pointer;position:relative;margin:2px 0 0;transition:background-color .15s ease,border-color .15s ease}
+.row-check:checked{background:var(--accent);border-color:var(--accent)}
+.row-check:checked::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.row-check:disabled{opacity:.5;cursor:not-allowed}
+.legend{font-size:13px;color:var(--muted);margin-top:12px;max-width:70ch;line-height:1.5}
+
+/* levers */
+details.levers{margin-top:28px;background:var(--card);border-radius:var(--r-lg);box-shadow:inset 0 0 0 1px var(--hair)}
+details.levers summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800}
+details.levers summary::-webkit-details-marker{display:none}
+details.levers summary .chev{width:22px;height:22px;border-radius:50%;background:var(--soft);display:grid;place-items:center;transition:transform .2s var(--ease-out)}
+details.levers[open] summary .chev{transform:rotate(180deg)}
+.levers-body{padding:0 22px 22px;display:grid;gap:8px 28px}
+@media (min-width:768px){.levers-body{grid-template-columns:1fr 1fr}}
+.lv{display:grid;grid-template-columns:1fr 96px;grid-template-areas:"label val" "range range";gap:2px 12px;align-items:center;padding-block:8px}
+.lv .k-label{grid-area:label;font-size:14px;color:var(--ink2)}
+.lv input[type=number]{grid-area:val;width:96px;justify-self:end;font:inherit;font-family:var(--pm);font-size:14px;font-weight:700;padding:5px 10px;border:1px solid var(--rule);border-radius:9px;background:var(--card);color:var(--ink);text-align:right}
+.lv input[type=range]{grid-area:range;-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent) var(--p,50%),var(--hair) var(--p,50%));margin:8px 0 2px;cursor:pointer}
+.lv input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--card);box-shadow:0 0 0 2px var(--accent);transition:transform .15s var(--ease-out)}
+.lv input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--card);box-shadow:0 0 0 2px var(--accent)}
+@media (hover:hover) and (pointer:fine){.lv input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}}
+.lv-group{grid-column:1/-1;font-family:var(--pm);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px;padding-top:12px;border-top:1px solid var(--hair)}
+.lv-group:first-child{border-top:0;margin-top:0;padding-top:4px}
+#adv{grid-column:1/-1;display:grid;gap:8px 28px}
+@media (min-width:768px){#adv{grid-template-columns:1fr 1fr}}
+.adv-note{grid-column:1/-1;font-size:12px;color:var(--muted);padding:10px 12px;border:1px dashed var(--rule);border-radius:var(--r-sm);margin-top:10px}
+
+/* notes */
+.notes{margin-top:36px;display:grid;gap:14px}
+@media (min-width:768px){.notes{grid-template-columns:1fr 1fr}}
+.note{background:var(--card);border-radius:var(--r-lg);padding:22px;box-shadow:inset 0 0 0 1px var(--hair)}
+.note h3{margin-bottom:6px}
+.note p,.note li{font-size:14.5px;line-height:1.5;color:var(--body)}
+.note ul{margin:6px 0 0;padding-left:18px}
+
+footer.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--hair);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+
+/* sticky summary */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:0 12px calc(12px + env(safe-area-inset-bottom,0px))}
+.bar-in{max-width:1120px;margin:0 auto;background:var(--accent);color:#fff;border-radius:16px;padding:14px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;box-shadow:0 12px 30px rgba(27,26,24,.22)}
+.bar .t{font-family:var(--pm);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.bar .big{font-size:26px;font-weight:900;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;padding:2px 6px;margin:-2px -6px;border-radius:8px;transition:background-color .4s ease}
+.bar .big.hot{background-color:rgba(255,255,255,.18)}
+.bar .m{font-size:14px;font-weight:700;opacity:.95}
+.bar .r{margin-left:auto;font-size:13px;opacity:.9;max-width:44ch}
+
+/* entrance */
+.rise{animation:rise .55s var(--ease-out) both;animation-delay:calc(var(--i,0) * 60ms)}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none}.opt,.share .v,.bar .big,.ph td.num .c,.opt .price{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top rise" style="--i:0">
+    <a class="mark" href="#" aria-label="Shoppypella"><i></i><span>Shoppypella</span></a>
+    <div class="top-actions">
+      <button class="btn ghost" id="lang" type="button" aria-label="Language">EN</button>
+      <button class="btn ghost" id="reset" type="button" data-i18n="reset">Zurücksetzen</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow rise" style="--i:1" data-i18n="eyebrow">Preismodell · Kostendach je Phase</span>
+    <h1 class="rise" style="--i:2"><span data-i18n="h1a">Drei Wege</span><br><span data-i18n="h1b" style="color:var(--ink)">zum Marktplatz.</span></h1>
+    <p class="lead rise" style="--i:3" data-i18n="lead">Wer baut, bestimmt Preis und Dauer. Die Phasen bestimmen, was Sie zuerst kaufen. Jeder Betrag ist ein Kostendach: abgerechnet wird je Phase nach Aufwand, nie darüber.</p>
+  </section>
+
+  <section class="rise" style="--i:4">
+    <div class="opts" id="opts"></div>
+  </section>
+
+  <section class="share rise" style="--i:5" id="share" aria-live="polite">
+    <div>
+      <span class="eyebrow" data-i18n="sh_eyebrow">Nur wenn ich baue</span>
+      <h3 data-i18n="sh_title">Umsatzbeteiligung statt vollem Preis</h3>
+      <p style="margin-top:8px" data-i18n="sh_sub">Ein Anteil am Nettoverkaufspreis jedes über die Plattform verkauften Produkts, 36 Monate ab Launch, quartalsweise abgerechnet. Dafür sinkt das Kostendach.</p>
+      <div class="seg" id="seg" role="group" aria-label="Umsatzbeteiligung"></div>
+    </div>
+    <div>
+      <div class="v mono" id="sh-cash">CHF 12’000</div>
+      <div class="l" id="sh-cash-l"></div>
+    </div>
+    <div>
+      <div class="v mono" id="sh-ev"></div>
+      <div class="l" id="sh-ev-l"></div>
+      <input type="range" id="gmv" min="50000" max="1000000" step="50000" aria-label="Jahresumsatz">
+      <div class="l" id="gmv-l"></div>
+    </div>
+  </section>
+
+  <section class="block rise" style="--i:6">
+    <div class="block-head">
+      <div>
+        <span class="eyebrow" data-i18n="ph_eyebrow">Phasen</span>
+        <h2 data-i18n="ph_title">Was Sie zuerst kaufen</h2>
+      </div>
+      <p data-i18n="ph_sub">Die Phasen bauen aufeinander auf und werden in dieser Reihenfolge geliefert. Jede wird bei Abnahme abgerechnet, höchstens bis zu ihrem Kostendach. Nach jeder Phase können Sie anhalten.</p>
+    </div>
+    <div class="scroller">
+      <table class="ph" id="ph">
+        <thead><tr>
+          <th></th>
+          <th data-i18n="col_phase">Phase</th>
+          <th class="num" data-opt="J"><span data-i18n="junior">Junior</span></th>
+          <th class="num" data-opt="I"><span data-i18n="inter">Intermediate</span></th>
+          <th class="num" data-opt="S"><span data-i18n="senior">Senior</span></th>
+        </tr></thead>
+        <tbody id="ph-body"></tbody>
+        <tfoot><tr>
+          <td></td>
+          <td class="name"><b data-i18n="total">Kostendach gesamt</b><small id="tot-note"></small></td>
+          <td class="num" data-opt="J"><span class="c mono" id="tot-J"></span><span class="w" id="totw-J"></span></td>
+          <td class="num" data-opt="I"><span class="c mono" id="tot-I"></span><span class="w" id="totw-I"></span></td>
+          <td class="num" data-opt="S"><span class="c mono" id="tot-S"></span><span class="w" id="totw-S"></span></td>
+        </tr></tfoot>
+      </table>
+    </div>
+    <p class="legend" data-i18n="ph_legend">Haken entfernen, um eine Phase aus dem Angebot zu nehmen. Das Fundament bleibt immer drin – ohne Shell gibt es nichts zu bauen. Die Dauer ist die Zeit bis zur Abnahme der letzten gewählten Phase.</p>
+  </section>
+
+  <details class="levers rise" style="--i:7" id="levers">
+    <summary><span data-i18n="lv_title">Anpassen</span><span class="chev" aria-hidden="true">⌄</span></summary>
+    <div class="levers-body" id="lv-body"></div>
+  </details>
+
+  <div class="notes rise" style="--i:8">
+    <div class="note">
+      <h3 data-i18n="n1_t">Kostendach</h3>
+      <p data-i18n="n1_p">Der Betrag je Phase ist die Obergrenze. Abgerechnet wird der tatsächliche Aufwand bei Abnahme der Phase – liegt er darunter, zahlen Sie weniger; darüber geht er zu unseren Lasten. Was geliefert wird, steht in den Dokumenten 01–03.</p>
+    </div>
+    <div class="note">
+      <h3 data-i18n="n2_t">Für alle drei Wege gleich</h3>
+      <ul>
+        <li data-i18n="n2_a">Gleiche Spezifikation, gleiche neun Abnahmekriterien beim Launch.</li>
+        <li data-i18n="n2_b">Junior und Intermediate: ich lege das Fundament und prüfe an den Gates; den Geldpfad schreibe oder prüfe ich selbst.</li>
+        <li data-i18n="n2_c">Nicht enthalten: Hosting, Clerk, Stripe-Gebühren, Übersetzungen, Rechtstexte.</li>
+        <li data-i18n="n2_d">Preise in CHF exkl. MwSt.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="foot rise" style="--i:9">
+    <span data-i18n="foot_l">Shoppypella · Preismodell · Stand 17.09.2026</span>
+    <span data-i18n="foot_r">Beträge in CHF exkl. MwSt. Kostendach, kein Festpreis.</span>
+  </footer>
+</div>
+
+<div class="bar" id="bar" aria-live="polite">
+  <div class="bar-in">
+    <span class="t" data-i18n="bar_t">Kostendach</span>
+    <span class="big mono" id="bar-total">CHF 12’000</span>
+    <span class="m" id="bar-meta"></span>
+    <span class="r" id="bar-note"></span>
+  </div>
+</div>
+
+<script>
+(() => {
+'use strict';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const T = {
+  de: {
+    reset:'Zurücksetzen', eyebrow:'Preismodell · Kostendach je Phase', h1a:'Drei Wege', h1b:'zum Marktplatz.',
+    lead:'Wer baut, bestimmt Preis und Dauer. Die Phasen bestimmen, was Sie zuerst kaufen. Jeder Betrag ist ein Kostendach: abgerechnet wird je Phase nach Aufwand, nie darüber.',
+    junior:'Junior', inter:'Intermediate', senior:'Senior', months:'Monate', weeks:'Wochen', ceiling:'Kostendach',
+    oJ:'Ein Junior baut. Ich lege das Fundament und prüfe jede Phase an ihrem Gate.', oI:'Ein Intermediate baut. Ich übergebe die Architektur und prüfe an den Gates.', oS:'Ich baue selbst – schnellster Weg, kürzeste Übergaben.',
+    badge_share:'mit 10 % Beteiligung: {c}', badge_full:'ohne Beteiligung: {c}',
+    sh_eyebrow:'Nur wenn ich baue', sh_title:'Umsatzbeteiligung statt vollem Preis',
+    sh_sub:'Ein Anteil am Nettoverkaufspreis jedes über die Plattform verkauften Produkts, {m} Monate ab Launch, quartalsweise abgerechnet. Dafür sinkt das Kostendach.',
+    sh_cash_l:'Kostendach Senior mit <b>{s} %</b> Beteiligung · statt {full}', sh_cash_l0:'Kostendach Senior ohne Beteiligung · CHF {r}/h für ≈ {h} Std.',
+    sh_ev_l:'Mein Anteil bei <b>{g}</b> Jahresumsatz · {y} pro Jahr, {t} über {m} Monate', sh_ev_l0:'Kein Anteil – wählen Sie 5, 10 oder 15 %',
+    gmv_l:'Szenario Jahres-Nettoumsatz: {g}', sh_off:'Die Beteiligung gilt nur, wenn ich selbst baue.',
+    ph_eyebrow:'Phasen', ph_title:'Was Sie zuerst kaufen',
+    ph_sub:'Die Phasen bauen aufeinander auf und werden in dieser Reihenfolge geliefert. Jede wird bei Abnahme abgerechnet, höchstens bis zu ihrem Kostendach. Nach jeder Phase können Sie anhalten.',
+    col_phase:'Phase', total:'Kostendach gesamt', tot_note:'{n} von {all} Phasen · Dauer bis Abnahme der letzten',
+    ph_legend:'Haken entfernen, um eine Phase aus dem Angebot zu nehmen. Das Fundament bleibt immer drin – ohne Shell gibt es nichts zu bauen. Die Dauer ist die Zeit bis zur Abnahme der letzten gewählten Phase. Die Folgephase wird nach dem Launch separat angeboten und ist hier noch nicht wählbar.',
+    p_shell:'App-Shell & Fundament', p_shell_d:'Monorepo, Datenmodell, Login, Rechte, Katalog-Backend, Hosting & Staging, Design-System, Header/Footer',
+    p_shop:'Shop', p_shop_d:'Startseite, Kategorie mit Filtern, Produktseite, Suche, fünf Sprachen',
+    p_checkout:'Warenkorb & Kasse', p_checkout_d:'Warenkorb, Preislogik & MwSt., Versand, Kasse, Karte & TWINT, Bestellung & E-Mails',
+    p_account:'Kundenkonto', p_account_d:'Registrierung, Bestellungen, Sendungsverfolgung, Adressen, Rückerstattungen',
+    p_seller:'Verkäuferbereich', p_seller_d:'Registrierung mit Freigabe, Dashboard: Produkte, Bestellungen, Versand, Auszahlungen, Influencer-Codes, Einstellungen',
+    p_admin:'Admin & Launch', p_admin_d:'Plattform-Admin, Gutscheine, Rechtstexte & Cookie-Banner, Monitoring, Backups, Tests, Go-live',
+    p_followup:'Ausbau: SEO, Analytics & mehr', p_followup_d:'SEO & Performance (Canonicals, hreflang, Sitemaps, strukturierte Daten, Core Web Vitals, ISR), Analytics & Conversion-Tracking, Bewertungen mit Moderation, Wunschliste, gespeicherte Zahlungsmittel, PayPal, Paketverfolgung per Carrier-API, Retouren, Teilrückerstattungen, UTM-Attribution, CSV-Import',
+    later_tag:'Folgephase · später', lv_follow:'Ausbau, Folgephase (CHF)', k_fJ:'Junior', k_fI:'Intermediate', k_fS:'Senior',
+    lv_title:'Anpassen', lv_prices:'Kostendach (CHF)', lv_months:'Dauer (Monate)', lv_rates:'Stundensatz (CHF)', lv_share:'Beteiligung', lv_weights:'Phasengewichte (%)',
+    k_pJ:'Junior', k_pI:'Intermediate', k_pS:'Senior', k_mJ:'Junior', k_mI:'Intermediate', k_mS:'Senior', k_hJ:'Junior', k_hI:'Intermediate', k_hS:'Senior',
+    rate_l:'CHF {r}/h · ≈ {h} Std.', sh_rate:'effektiv CHF {r}/h für ≈ {h} Std.',
+    k_relDisc:'Nachlass je 10 % Beteiligung (% des Kostendachs)', k_term:'Laufzeit der Beteiligung (Monate)',
+    k_w_shell:'App-Shell & Fundament', k_w_shop:'Shop', k_w_checkout:'Warenkorb & Kasse', k_w_account:'Kundenkonto', k_w_seller:'Verkäuferbereich', k_w_admin:'Admin & Launch',
+    adv_note:'Phasengewichte sind Modellannahmen – nur sichtbar mit #modell in der Adresse.',
+    n1_t:'Kostendach', n1_p:'Der Betrag je Phase ist die Obergrenze. Abgerechnet wird der tatsächliche Aufwand zum Stundensatz des Wegs bei Abnahme der Phase – liegt er darunter, zahlen Sie weniger; darüber geht er zu unseren Lasten. Was geliefert wird, steht in den Dokumenten 01–03.',
+    n2_t:'Für alle drei Wege gleich', n2_a:'Gleiche Spezifikation, gleiche neun Abnahmekriterien beim Launch.', n2_b:'Junior und Intermediate: ich lege das Fundament und prüfe an den Gates; den Geldpfad schreibe oder prüfe ich selbst.', n2_c:'Nicht enthalten: Hosting, Clerk, Stripe-Gebühren, Übersetzungen, Rechtstexte.', n2_d:'Preise in CHF exkl. MwSt.',
+    foot_l:'Shoppypella · Preismodell · Stand 17.09.2026', foot_r:'Beträge in CHF exkl. MwSt. Kostendach, kein Festpreis.',
+    bar_t:'Kostendach', bar_meta:'{who} · {n} Phasen · {w}', bar_share:'+ {s} % vom Nettoverkaufspreis, {m} Monate', bar_note:'Rechnung je Phase bei Abnahme, bis zum Kostendach.',
+  },
+  en: {
+    reset:'Reset', eyebrow:'Price model · ceiling per phase', h1a:'Three ways', h1b:'to the marketplace.',
+    lead:'Who builds sets price and duration. The phases set what you buy first. Every amount is a ceiling: each phase is billed on effort, never above it.',
+    junior:'Junior', inter:'Intermediate', senior:'Senior', months:'months', weeks:'weeks', ceiling:'Ceiling',
+    oJ:'A junior builds. I lay the foundation and review every phase at its gate.', oI:'An intermediate builds. I hand over the architecture and review at the gates.', oS:'I build it myself – fastest path, shortest handovers.',
+    badge_share:'with a 10 % share: {c}', badge_full:'without a share: {c}',
+    sh_eyebrow:'Only when I build', sh_title:'Revenue share instead of the full price',
+    sh_sub:'A share of the net sale price of every product sold through the platform, {m} months from launch, settled quarterly. In return the ceiling drops.',
+    sh_cash_l:'Senior ceiling with a <b>{s} %</b> share · instead of {full}', sh_cash_l0:'Senior ceiling without a share · CHF {r}/h for ≈ {h} hours',
+    sh_ev_l:'My share at <b>{g}</b> yearly sales · {y} per year, {t} over {m} months', sh_ev_l0:'No share – pick 5, 10 or 15 %',
+    gmv_l:'Scenario, yearly net sales: {g}', sh_off:'The share applies only when I build it myself.',
+    ph_eyebrow:'Phases', ph_title:'What you buy first',
+    ph_sub:'The phases build on each other and are delivered in this order. Each is billed on acceptance, up to its ceiling. You can stop after any phase.',
+    col_phase:'Phase', total:'Total ceiling', tot_note:'{n} of {all} phases · time to acceptance of the last one',
+    ph_legend:'Untick a phase to take it out of the offer. The foundation always stays – without the shell there is nothing to build on. Duration is the time to acceptance of the last chosen phase. The follow-up phase is offered separately after launch and cannot be selected yet.',
+    p_shell:'App shell & foundation', p_shell_d:'Monorepo, data model, login, permissions, catalogue backend, hosting & staging, design system, header/footer',
+    p_shop:'Shop', p_shop_d:'Home, category with filters, product page, search, five languages',
+    p_checkout:'Cart & checkout', p_checkout_d:'Cart, pricing & VAT, shipping, checkout, card & TWINT, orders & emails',
+    p_account:'Customer account', p_account_d:'Registration, orders, tracking, addresses, refunds',
+    p_seller:'Seller area', p_seller_d:'Signup with approval, dashboard: products, orders, shipping, payouts, influencer codes, settings',
+    p_admin:'Admin & launch', p_admin_d:'Platform admin, coupons, legal pages & cookie banner, monitoring, backups, tests, go-live',
+    p_followup:'Follow-up: SEO, analytics & more', p_followup_d:'SEO & performance (canonicals, hreflang, sitemaps, structured data, Core Web Vitals, ISR), analytics & conversion tracking, reviews with moderation, wishlist, saved payment methods, PayPal, carrier tracking APIs, returns, partial refunds, UTM attribution, CSV import',
+    later_tag:'Follow-up · later', lv_follow:'Follow-up phase (CHF)', k_fJ:'Junior', k_fI:'Intermediate', k_fS:'Senior',
+    lv_title:'Adjust', lv_prices:'Ceiling (CHF)', lv_months:'Duration (months)', lv_rates:'Hourly fee (CHF)', lv_share:'Revenue share', lv_weights:'Phase weights (%)',
+    k_pJ:'Junior', k_pI:'Intermediate', k_pS:'Senior', k_mJ:'Junior', k_mI:'Intermediate', k_mS:'Senior', k_hJ:'Junior', k_hI:'Intermediate', k_hS:'Senior',
+    rate_l:'CHF {r}/h · ≈ {h} hours', sh_rate:'effectively CHF {r}/h for ≈ {h} hours',
+    k_relDisc:'Discount per 10 % share (% of the ceiling)', k_term:'Term of the share (months)',
+    k_w_shell:'App shell & foundation', k_w_shop:'Shop', k_w_checkout:'Cart & checkout', k_w_account:'Customer account', k_w_seller:'Seller area', k_w_admin:'Admin & launch',
+    adv_note:'Phase weights are model assumptions – shown only with #modell in the address.',
+    n1_t:'Ceiling', n1_p:'The amount per phase is the upper limit. Actual effort is billed at the path’s hourly fee on acceptance of the phase – below it you pay less; above it is on us. What is delivered is in documents 01–03.',
+    n2_t:'The same on all three paths', n2_a:'Same specification, same nine acceptance criteria at launch.', n2_b:'Junior and intermediate: I lay the foundation and review at the gates; the money path I write or review myself.', n2_c:'Not included: hosting, Clerk, Stripe fees, translations, legal texts.', n2_d:'Prices in CHF excl. VAT.',
+    foot_l:'Shoppypella · Price model · as of 17.09.2026', foot_r:'Amounts in CHF excl. VAT. Ceiling, not a fixed price.',
+    bar_t:'Ceiling', bar_meta:'{who} · {n} phases · {w}', bar_share:'+ {s} % of the net sale price, {m} months', bar_note:'Invoice per phase on acceptance, up to the ceiling.',
+  },
+  tr: {
+    reset:'Sıfırla', eyebrow:'Fiyat modeli · Aşama başına tavan fiyat', h1a:'Pazaryerine', h1b:'üç yol.',
+    lead:'Kim yaparsa fiyatı ve süreyi o belirler. Aşamalar, önce neyi satın alacağınızı belirler. Her tutar bir tavan fiyattır: aşama başına harcanan emek faturalanır, asla üstü değil.',
+    junior:'Junior', inter:'Orta düzey', senior:'Senior', months:'ay', weeks:'hafta', ceiling:'Tavan',
+    oJ:'Bir junior yapar. Temeli ben atarım, her aşamayı kapısında ben denetlerim.', oI:'Bir orta düzey geliştirici yapar. Mimariyi ben devrederim, kapılarda ben denetlerim.', oS:'Kendim yaparım – en hızlı yol, en kısa devir teslim.',
+    badge_share:'%10 pay ile: {c}', badge_full:'paysız: {c}',
+    sh_eyebrow:'Yalnızca ben yaparsam', sh_title:'Tam fiyat yerine ciro payı',
+    sh_sub:'Platform üzerinden satılan her ürünün net satış fiyatından bir pay; lansmandan itibaren {m} ay, üç ayda bir hesaplanır. Karşılığında tavan fiyat düşer.',
+    sh_cash_l:'<b>%{s}</b> pay ile senior tavanı · {full} yerine', sh_cash_l0:'Paysız senior tavanı · ≈ {h} saat için CHF {r}/sa',
+    sh_ev_l:'<b>{g}</b> yıllık ciroda payım · yılda {y}, {m} ayda {t}', sh_ev_l0:'Pay yok – %5, %10 ya da %15 seçin',
+    gmv_l:'Senaryo, yıllık net ciro: {g}', sh_off:'Pay yalnızca kendim yaparsam geçerlidir.',
+    rate_l:'CHF {r}/sa · ≈ {h} saat', sh_rate:'≈ {h} saat için etkin CHF {r}/sa',
+    ph_eyebrow:'Aşamalar', ph_title:'Önce neyi satın alırsınız',
+    ph_sub:'Aşamalar birbirinin üzerine kurulur ve bu sırayla teslim edilir. Her biri kabulde faturalanır, en fazla kendi tavanına kadar. Her aşamadan sonra durabilirsiniz.',
+    col_phase:'Aşama', total:'Toplam tavan', tot_note:'{all} aşamadan {n} · son aşamanın kabulüne kadar süre',
+    ph_legend:'Bir aşamayı tekliften çıkarmak için işareti kaldırın. Temel her zaman kalır – kabuk olmadan üzerine inşa edilecek bir şey yoktur. Süre, seçilen son aşamanın kabulüne kadar geçen zamandır. Devam aşaması lansmandan sonra ayrıca teklif edilir; burada henüz seçilemez.',
+    p_shell:'Uygulama kabuğu ve temel', p_shell_d:'Monorepo, veri modeli, giriş, yetkiler, katalog arka ucu, barındırma ve hazırlık ortamı, tasarım sistemi, üst/alt bilgi',
+    p_shop:'Mağaza', p_shop_d:'Ana sayfa, filtreli kategori, ürün sayfası, arama, beş dil',
+    p_checkout:'Sepet ve ödeme', p_checkout_d:'Sepet, fiyat mantığı ve KDV, kargo, ödeme, kart ve TWINT, sipariş ve e-postalar',
+    p_account:'Müşteri hesabı', p_account_d:'Kayıt, siparişler, kargo takibi, adresler, iadeler',
+    p_seller:'Satıcı alanı', p_seller_d:'Onaylı kayıt, panel: ürünler, siparişler, kargo, ödemeler, influencer kodları, ayarlar',
+    p_admin:'Yönetim ve lansman', p_admin_d:'Platform yönetimi, kuponlar, yasal metinler ve çerez bildirimi, izleme, yedekler, testler, yayına alma',
+    p_followup:'Devam: SEO, analitik ve fazlası', p_followup_d:'SEO ve performans (canonical, hreflang, site haritaları, yapısal veri, Core Web Vitals, ISR), analitik ve dönüşüm takibi, moderasyonlu yorumlar, istek listesi, kayıtlı ödeme yöntemleri, PayPal, kargo API ile takip, iadeler, kısmi iade, UTM atfı, CSV içe aktarma',
+    later_tag:'Devam aşaması · sonra', lv_follow:'Devam aşaması (CHF)', k_fJ:'Junior', k_fI:'Orta düzey', k_fS:'Senior',
+    lv_title:'Ayarla', lv_prices:'Tavan (CHF)', lv_months:'Süre (ay)', lv_rates:'Saat ücreti (CHF)', lv_share:'Ciro payı', lv_weights:'Aşama ağırlıkları (%)',
+    k_pJ:'Junior', k_pI:'Orta düzey', k_pS:'Senior', k_mJ:'Junior', k_mI:'Orta düzey', k_mS:'Senior', k_hJ:'Junior', k_hI:'Orta düzey', k_hS:'Senior',
+    k_relDisc:'Her %10 pay için indirim (tavanın %’si)', k_term:'Payın süresi (ay)',
+    k_w_shell:'Uygulama kabuğu ve temel', k_w_shop:'Mağaza', k_w_checkout:'Sepet ve ödeme', k_w_account:'Müşteri hesabı', k_w_seller:'Satıcı alanı', k_w_admin:'Yönetim ve lansman',
+    adv_note:'Aşama ağırlıkları model varsayımıdır – yalnızca adreste #modell varsa görünür.',
+    n1_t:'Tavan fiyat', n1_p:'Aşama başına tutar üst sınırdır. Aşamanın kabulünde gerçek emek, yolun saat ücretiyle faturalanır – altında kalırsa daha az ödersiniz; üstü bize aittir. Neyin teslim edileceği 01–03 dokümanlarındadır.',
+    n2_t:'Üç yolda da aynı', n2_a:'Aynı spesifikasyon, lansmanda aynı dokuz kabul ölçütü.', n2_b:'Junior ve orta düzey: temeli ben atarım, kapılarda ben denetlerim; para yolunu ben yazarım ya da denetlerim.', n2_c:'Dahil değil: barındırma, Clerk, Stripe ücretleri, çeviriler, yasal metinler.', n2_d:'Fiyatlar CHF, KDV hariç.',
+    foot_l:'Shoppypella · Fiyat modeli · 17.09.2026', foot_r:'Tutarlar CHF, KDV hariç. Tavan fiyat, sabit fiyat değil.',
+    bar_t:'Tavan', bar_meta:'{who} · {n} aşama · {w}', bar_share:'+ net satış fiyatının %{s}’i, {m} ay', bar_note:'Her aşama kabulde faturalanır, tavana kadar.',
+  }
+};
+let lang = 'de';
+const t = k => T[lang][k] ?? T.de[k] ?? k;
+const fill = (k, o) => t(k).replace(/\{(\w+)\}/g, (_, n) => o[n] ?? '');
+
+/* ---------- model ---------- */
+const DEFAULTS = { pJ:8240, pI:10780, pS:13860, mJ:5, mI:3, mS:2.25, hJ:18, hI:30, hS:48, fJ:3760, fI:4870, fS:6240, relDisc:13.8, term:36, gmv:300000,
+  w_shell:20, w_shop:15, w_checkout:20, w_account:10, w_seller:20, w_admin:15 };
+const OPTS = ['J','I','S'];
+const PHASES = ['shell','shop','checkout','account','seller','admin'];
+const LEVERS = [
+  {g:'lv_prices'}, {id:'pJ',min:4000,max:20000,step:10}, {id:'pI',min:4000,max:20000,step:10}, {id:'pS',min:4000,max:25000,step:10},
+  {g:'lv_months'}, {id:'mJ',min:1,max:9,step:0.25}, {id:'mI',min:1,max:9,step:0.25}, {id:'mS',min:1,max:9,step:0.25},
+  {g:'lv_rates'}, {id:'hJ',min:5,max:200,step:1}, {id:'hI',min:5,max:200,step:1}, {id:'hS',min:5,max:250,step:1},
+  {g:'lv_follow'}, {id:'fJ',min:1000,max:15000,step:10}, {id:'fI',min:1000,max:15000,step:10}, {id:'fS',min:1000,max:20000,step:10},
+  {g:'lv_share'}, {id:'relDisc',min:0,max:40,step:0.1}, {id:'term',min:12,max:60,step:6},
+];
+const ADV = PHASES.map(p => ({id:'w_'+p, min:0, max:50, step:1}));
+let P = {...DEFAULTS};
+let state = { opt:'S', share:10, on:{shell:true,shop:true,checkout:true,account:true,seller:true,admin:true} };
+try { const s = JSON.parse(localStorage.getItem('sp-pm-v3') || 'null'); if (s && s.P) { P = {...DEFAULTS, ...s.P}; state = {...state, ...s.state, on:{...state.on, ...(s.state?.on||{})}}; } } catch (e) {}
+if (![0, 5, 10, 15].includes(state.share)) state.share = 10;
+const save = () => { try { localStorage.setItem('sp-pm-v3', JSON.stringify({P, state})); } catch (e) {} };
+
+const fullPrice = o => P['p' + o];
+const SHARES = [0, 5, 10, 15];
+const cash = o => o === 'S' ? Math.max(0, Math.round(P.pS * (1 - P.relDisc / 100 * state.share / 10) / 5) * 5) : fullPrice(o);
+const months = o => P['m' + o];
+function split(total) {
+  const ws = PHASES.map(p => Math.max(0, P['w_' + p])), sum = ws.reduce((a, b) => a + b, 0) || 1;
+  const out = {}; let acc = 0;
+  PHASES.forEach((p, i) => { let v = i === PHASES.length - 1 ? total - acc : Math.round(total * ws[i] / sum / 10) * 10; out[p] = v; acc += v; });
+  return out;
+}
+function weeksFor(o) {
+  const ws = PHASES.map(p => Math.max(0, P['w_' + p])), sum = ws.reduce((a, b) => a + b, 0) || 1;
+  const tw = months(o) * 4.33, out = {};
+  PHASES.forEach((p, i) => { out[p] = Math.round(tw * ws[i] / sum * 2) / 2; });
+  return out;
+}
+function compute() {
+  const M = {};
+  for (const o of OPTS) {
+    const c = cash(o), ph = split(c), wk = weeksFor(o);
+    let tot = 0, totw = 0, n = 0;
+    for (const p of PHASES) if (state.on[p]) { tot += ph[p]; totw += wk[p]; n++; }
+    M[o] = { cash: c, full: fullPrice(o), ph, wk, tot, totw: Math.round(totw * 2) / 2, n };
+  }
+  return M;
+}
+
+/* ---------- formatting & motion ---------- */
+const nf = new Intl.NumberFormat('de-CH', { maximumFractionDigits: 0 });
+const chf = n => 'CHF ' + nf.format(Math.round(n));
+const fmtMonths = m => (m * 2) % 1 === 0 ? String(m).replace('.', lang === 'de' ? '.' : '.') : `${Math.floor(m * 2) / 2}–${Math.ceil(m * 2) / 2}`;
+const fmtWeeks = w => `${String(w).replace('.5', '½')} ${t('weeks')}`;
+const hotT = new WeakMap();
+function hot(el) { if (!el || reduced) return; el.classList.add('hot'); clearTimeout(hotT.get(el)); hotT.set(el, setTimeout(() => el.classList.remove('hot'), 420)); }
+function setNum(el, value, fmt = chf) {
+  if (!el) return;
+  const prev = el._v; if (prev === value && el._lang === lang) return;
+  el._v = value; el._lang = lang;
+  if (reduced || prev === undefined) { el.textContent = fmt(value); return; }
+  if (el._raf) cancelAnimationFrame(el._raf);
+  const from = el._from ?? prev, t0 = performance.now(), d = 260;
+  const step = now => { const p = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - p, 3); const v = from + (value - from) * e; el._from = v; el.textContent = fmt(v); if (p < 1) el._raf = requestAnimationFrame(step); else { el._from = undefined; el.textContent = fmt(value); } };
+  el._raf = requestAnimationFrame(step); hot(el);
+}
+
+/* ---------- build ---------- */
+const optsEl = document.getElementById('opts'), optEls = {};
+function buildOpts() {
+  optsEl.innerHTML = '';
+  for (const o of OPTS) {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.dataset.opt = o;
+    b.innerHTML = `<span class="who">${t(o === 'J' ? 'junior' : o === 'I' ? 'inter' : 'senior')}</span><span class="price mono"><span class="pv"></span><small>${t('ceiling')}</small></span><span class="dur"></span><span class="rate mono"></span><span class="desc">${t('o' + o)}</span>${o === 'S' ? '<span class="badge"></span>' : ''}`;
+    b.addEventListener('click', () => { state.opt = o; save(); render(); });
+    optsEl.appendChild(b); optEls[o] = b;
+  }
+}
+const segEl = document.getElementById('seg');
+function buildSeg() {
+  segEl.innerHTML = '';
+  for (const s of SHARES) {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = s === 0 ? (lang === 'de' ? 'keine' : lang === 'tr' ? 'yok' : 'none') : (lang === 'tr' ? '%' + s : s + ' %'); b.dataset.s = s;
+    b.addEventListener('click', () => { state.share = s; save(); render(); });
+    segEl.appendChild(b);
+  }
+}
+const phBody = document.getElementById('ph-body'), rowEls = {};
+function buildPhases() {
+  phBody.innerHTML = '';
+  for (const p of PHASES) {
+    const tr = document.createElement('tr'); tr.dataset.p = p;
+    tr.innerHTML = `<td><input type="checkbox" class="row-check" id="on-${p}" aria-label="${t('p_' + p)}"${p === 'shell' ? ' disabled' : ''}></td><td class="name"><b>${t('p_' + p)}</b><small>${t('p_' + p + '_d')}</small></td>` +
+      OPTS.map(o => `<td class="num" data-opt="${o}"><span class="c mono" id="c-${p}-${o}"></span><span class="w" id="w-${p}-${o}"></span></td>`).join('');
+    const cb = tr.querySelector('input'); cb.checked = !!state.on[p];
+    cb.addEventListener('change', () => { state.on[p] = cb.checked; save(); render(); });
+    phBody.appendChild(tr); rowEls[p] = tr;
+  }
+  const fr = document.createElement('tr'); fr.className = 'later'; fr.dataset.p = 'followup';
+  fr.innerHTML = `<td><input type="checkbox" class="row-check" id="on-followup" disabled aria-label="${t('p_followup')}"></td><td class="name"><b>${t('p_followup')} <span class="later-tag">${t('later_tag')}</span></b><small>${t('p_followup_d')}</small></td>` +
+    OPTS.map(o => `<td class="num" data-opt="${o}"><span class="c mono" id="c-followup-${o}"></span><span class="w" id="w-followup-${o}"></span></td>`).join('');
+  phBody.appendChild(fr);
+  document.querySelectorAll('#ph th[data-opt]').forEach(th => { th.onclick = () => { state.opt = th.dataset.opt; save(); render(); }; });
+}
+const lvBody = document.getElementById('lv-body'), lvInputs = {};
+function buildLevers() {
+  lvBody.innerHTML = '';
+  const make = (k, parent) => {
+    const row = document.createElement('label'); row.className = 'lv';
+    row.innerHTML = `<span class="k-label">${t('k_' + k.id)}</span><input type="number" id="n-${k.id}" min="${k.min}" max="${k.max}" step="${k.step}" aria-label="${t('k_' + k.id)}"><input type="range" id="r-${k.id}" min="${k.min}" max="${k.max}" step="${k.step}" aria-label="${t('k_' + k.id)}">`;
+    parent.appendChild(row);
+    const n = row.querySelector('input[type=number]'), r = row.querySelector('input[type=range]');
+    lvInputs[k.id] = { n, r, k };
+    const on = src => () => { let v = parseFloat(src.value); if (isNaN(v)) return; v = Math.min(k.max, Math.max(k.min, v)); P[k.id] = v; syncLever(k.id); save(); render(); };
+    r.addEventListener('input', on(r)); n.addEventListener('change', on(n));
+  };
+  for (const k of LEVERS) { if (k.g) { const g = document.createElement('div'); g.className = 'lv-group'; g.textContent = t(k.g); lvBody.appendChild(g); continue; } make(k, lvBody); }
+  const adv = document.createElement('div'); adv.id = 'adv'; adv.hidden = location.hash !== '#modell';
+  const g = document.createElement('div'); g.className = 'lv-group'; g.textContent = t('lv_weights'); adv.appendChild(g);
+  for (const k of ADV) make(k, adv);
+  const note = document.createElement('div'); note.className = 'adv-note'; note.textContent = t('adv_note'); adv.appendChild(note);
+  lvBody.appendChild(adv);
+  for (const id in lvInputs) syncLever(id);
+}
+function syncLever(id) { const { n, r, k } = lvInputs[id]; n.value = P[id]; r.value = P[id]; r.style.setProperty('--p', ((P[id] - k.min) / (k.max - k.min) * 100).toFixed(1) + '%'); }
+addEventListener('hashchange', () => { const a = document.getElementById('adv'); if (a) a.hidden = location.hash !== '#modell'; });
+
+/* ---------- render ---------- */
+function render() {
+  const M = compute();
+  const gmvEl = document.getElementById('gmv'); gmvEl.value = P.gmv; gmvEl.style.setProperty('--p', ((P.gmv - 50000) / 950000 * 100) + '%');
+  // option cards
+  for (const o of OPTS) {
+    const b = optEls[o], m = M[o];
+    b.classList.toggle('selected', state.opt === o); b.setAttribute('aria-pressed', state.opt === o);
+    setNum(b.querySelector('.pv'), m.tot);
+    b.querySelector('.dur').textContent = `${fmtMonths(months(o))} ${t('months')}`;
+    b.querySelector('.rate').textContent = fill('rate_l', { r: P['h' + o], h: Math.round(m.tot / P['h' + o]) });
+    if (o === 'S') {
+      const badge = b.querySelector('.badge'), fullSplit = split(P.pS), tenSplit = split(Math.max(0, Math.round(P.pS * (1 - P.relDisc / 100) / 5) * 5));
+      const sum = sp => PHASES.reduce((a, p) => a + (state.on[p] ? sp[p] : 0), 0);
+      badge.textContent = state.share > 0 ? fill('badge_full', { c: chf(sum(fullSplit)) }) : fill('badge_share', { c: chf(sum(tenSplit)) });
+    }
+  }
+  // share block
+  const sh = document.getElementById('share'), isS = state.opt === 'S';
+  sh.classList.toggle('off', !isS);
+  segEl.querySelectorAll('button').forEach(b => { b.classList.toggle('on', +b.dataset.s === state.share); b.disabled = !isS; });
+  const S = M.S;
+  setNum(document.getElementById('sh-cash'), S.tot);
+  const fullSplit = split(P.pS), fullIncl = PHASES.reduce((a, p) => a + (state.on[p] ? fullSplit[p] : 0), 0), hoursS = fullIncl / P.hS;
+  document.getElementById('sh-cash-l').innerHTML = !isS ? t('sh_off') : state.share > 0
+    ? fill('sh_cash_l', { s: state.share, full: chf(fullIncl) }) + ' · ' + fill('sh_rate', { r: hoursS > 0 ? Math.round(S.tot / hoursS) : P.hS, h: Math.round(hoursS) })
+    : fill('sh_cash_l0', { r: P.hS, h: Math.round(hoursS) });
+  const perYear = P.gmv * state.share / 100, ev = perYear * P.term / 12;
+  setNum(document.getElementById('sh-ev'), state.share > 0 ? ev : 0);
+  document.getElementById('sh-ev-l').innerHTML = state.share > 0 ? fill('sh_ev_l', { g: chf(P.gmv), y: chf(perYear), t: chf(ev), m: P.term }) : t('sh_ev_l0');
+  document.getElementById('gmv-l').textContent = fill('gmv_l', { g: chf(P.gmv) });
+  document.querySelector('[data-i18n="sh_sub"]').textContent = fill('sh_sub', { m: P.term });
+  // phase table
+  document.querySelectorAll('#ph [data-opt]').forEach(el => el.classList.toggle('sel', el.dataset.opt === state.opt));
+  for (const p of PHASES) {
+    rowEls[p].classList.toggle('off', !state.on[p]);
+    for (const o of OPTS) { setNum(document.getElementById(`c-${p}-${o}`), M[o].ph[p]); document.getElementById(`w-${p}-${o}`).textContent = fmtWeeks(M[o].wk[p]); }
+  }
+  for (const o of OPTS) {
+    const fh = P['f' + o] / P['h' + o], hpw = (fullPrice(o) / P['h' + o]) / (months(o) * 4.33);
+    setNum(document.getElementById('c-followup-' + o), P['f' + o]);
+    document.getElementById('w-followup-' + o).textContent = fmtWeeks(Math.max(0.5, Math.round(fh / hpw * 2) / 2));
+  }
+  for (const o of OPTS) { setNum(document.getElementById('tot-' + o), M[o].tot); document.getElementById('totw-' + o).textContent = `${fmtWeeks(M[o].totw)} · ≈ ${fmtMonths(Math.round(M[o].totw / 4.33 * 4) / 4)} ${t('months')}`; }
+  const n = PHASES.filter(p => state.on[p]).length;
+  document.getElementById('tot-note').textContent = fill('tot_note', { n, all: PHASES.length });
+  // bar
+  const m = M[state.opt], who = t(state.opt === 'J' ? 'junior' : state.opt === 'I' ? 'inter' : 'senior');
+  setNum(document.getElementById('bar-total'), m.tot);
+  document.getElementById('bar-meta').textContent = fill('bar_meta', { who, n: m.n, w: fmtWeeks(m.totw) });
+  document.getElementById('bar-note').textContent = (isS && state.share > 0 ? fill('bar_share', { s: state.share, m: P.term }) + ' · ' : '') + t('bar_note');
+}
+
+/* ---------- i18n & wiring ---------- */
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(e => { e.textContent = t(e.dataset.i18n); });
+  document.getElementById('lang').textContent = lang === 'de' ? 'EN' : lang === 'en' ? 'TR' : 'DE';
+}
+function buildAll() { buildOpts(); buildSeg(); buildPhases(); buildLevers(); }
+document.getElementById('gmv').addEventListener('input', e => { P.gmv = +e.target.value; save(); render(); });
+document.getElementById('reset').addEventListener('click', () => { P = {...DEFAULTS}; state = { opt:'S', share:10, on:Object.fromEntries(PHASES.map(p => [p, true])) }; save(); buildAll(); render(); });
+document.getElementById('lang').addEventListener('click', () => { lang = lang === 'de' ? 'en' : lang === 'en' ? 'tr' : 'de'; try { localStorage.setItem('sp-pm-lang', lang); } catch (e) {} applyLang(); buildAll(); render(); });
+try { const l = localStorage.getItem('sp-pm-lang'); if (l === 'en' || l === 'de' || l === 'tr') lang = l; } catch (e) {}
+applyLang(); buildAll(); render();
+})();
+</script>
+</body>
+</html>
