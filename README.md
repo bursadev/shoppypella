@@ -79,7 +79,9 @@ internet bağlantısına ihtiyacı vardır.
 İngilizce ve Türkçe; dil sağ üstten değişir. Sayfa tek dosyadır, kütüphane
 yüklemez; `build.py` Google Fonts bağlantılarını `src/fonts` içindeki Hanken
 Grotesk ve IBM Plex Mono kurallarıyla değiştirip `docs/preismodell/` altına
-yazar. "Anpassen" altındaki kaydırıcılar tarayıcıda kalır, sunucuya bir şey
+yazar. **Influencer Marketplace** (17.09.2026) altı lansman aşamasının üstüne kendi
+tavanıyla ayrı bir aşama satırı olarak eklidir; varsayılan seçili, işareti
+kaldırılabilir. "Anpassen" altındaki kaydırıcılar tarayıcıda kalır, sunucuya bir şey
 gitmez; aşama ağırlıkları yalnızca adrese `#modell` eklenince görünür.
 
 ## Müşteri talepleri
@@ -90,7 +92,10 @@ talimatlarına çevirir. Prototipte görünenler:
 - **Fiyat gösterimi** — normal fiyat siyah, indirimli fiyat kırmızı
   (`#D92D20`), yanında üstü çizili eski fiyat.
 - **Influencer sistemi** — satıcı panelinde "Influencer" menüsü ve kampanya
-  kodu tablosu; sepette tek bir "İndirim / influencer kodu" alanı.
+  kodu tablosu; sepette tek bir "İndirim / influencer kodu" alanı. (Müşterinin
+  17.09.2026 geri bildirimiyle bu, satıcının ürün başına komisyon açtığı üç
+  taraflı bir **Influencer Marketplace**'e genişledi — satıcı, influencer ve
+  yönetim panelleri; prototip henüz eski hâli gösteriyor.)
 - **Kargo takibi** — Hesabım › Siparişlerim'de taşıyıcı adı, tıklanabilir takip
   numarası ve "Kargo takip" aksiyonu; durum etiketleri (Yolda / Teslim edildi).
 - **Sosyal medya** — footer'da Instagram, TikTok, Facebook, Pinterest, YouTube

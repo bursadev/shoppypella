@@ -312,14 +312,16 @@ const T = {
     ph_eyebrow:'Phasen', ph_title:'Was Sie zuerst kaufen',
     ph_sub:'Die Phasen bauen aufeinander auf und werden in dieser Reihenfolge geliefert. Jede wird bei Abnahme abgerechnet, höchstens bis zu ihrem Kostendach. Nach jeder Phase können Sie anhalten.',
     col_phase:'Phase', total:'Kostendach gesamt', tot_note:'{n} von {all} Phasen · Dauer bis Abnahme der letzten',
-    ph_legend:'Haken entfernen, um eine Phase aus dem Angebot zu nehmen. Das Fundament bleibt immer drin – ohne Shell gibt es nichts zu bauen. Die Dauer ist die Zeit bis zur Abnahme der letzten gewählten Phase. Die Folgephase wird nach dem Launch separat angeboten und ist hier noch nicht wählbar.',
+    ph_legend:'Haken entfernen, um eine Phase aus dem Angebot zu nehmen. Das Fundament bleibt immer drin – ohne Shell gibt es nichts zu bauen. Die Dauer ist die Zeit bis zur Abnahme der letzten gewählten Phase. Der Influencer Marketplace ist eine eigene Phase mit eigenem Kostendach; sie lässt sich abwählen. Die Folgephase wird nach dem Launch separat angeboten und ist hier noch nicht wählbar.',
     p_shell:'App-Shell & Fundament', p_shell_d:'Monorepo, Datenmodell, Login, Rechte, Katalog-Backend, Hosting & Staging, Design-System, Header/Footer',
     p_shop:'Shop', p_shop_d:'Startseite, Kategorie mit Filtern, Produktseite, Suche, fünf Sprachen',
     p_checkout:'Warenkorb & Kasse', p_checkout_d:'Warenkorb, Preislogik & MwSt., Versand, Kasse, Karte & TWINT, Bestellung & E-Mails',
     p_account:'Kundenkonto', p_account_d:'Registrierung, Bestellungen, Sendungsverfolgung, Adressen, Rückerstattungen',
-    p_seller:'Verkäuferbereich', p_seller_d:'Registrierung mit Freigabe, Dashboard: Produkte, Bestellungen, Versand, Auszahlungen, Influencer-Codes, Einstellungen',
+    p_seller:'Verkäuferbereich', p_seller_d:'Registrierung mit Freigabe, Dashboard: Produkte, Bestellungen, Versand, Auszahlungen, Einstellungen',
     p_admin:'Admin & Launch', p_admin_d:'Plattform-Admin, Gutscheine, Rechtstexte & Cookie-Banner, Monitoring, Backups, Tests, Go-live',
     p_followup:'Ausbau: SEO, Analytics & mehr', p_followup_d:'SEO & Performance (Canonicals, hreflang, Sitemaps, strukturierte Daten, Core Web Vitals, ISR), Analytics & Conversion-Tracking, Bewertungen mit Moderation, Wunschliste, gespeicherte Zahlungsmittel, PayPal, Paketverfolgung per Carrier-API, Retouren, Teilrückerstattungen, UTM-Attribution, CSV-Import',
+    p_influencer:'Influencer Marketplace', p_influencer_d:'Dreiseitig: Verkäufer öffnen je Produkt eine Provision (% oder CHF), Influencer-Panel mit Produktsuche und Filtern, persönliche Tracking-Links, Klick- und Bestell-Attribution, Provisionszyklus (ausstehend → freigegeben → ausgezahlt), Auszahlung per Stripe Connect Express, Admin-Kontrolle',
+    infl_tag:'Erweiterung · 17.09.2026', lv_infl:'Influencer Marketplace (CHF)', k_iJ:'Junior', k_iI:'Intermediate', k_iS:'Senior',
     later_tag:'Folgephase · später', lv_follow:'Ausbau, Folgephase (CHF)', k_fJ:'Junior', k_fI:'Intermediate', k_fS:'Senior',
     lv_title:'Anpassen', lv_prices:'Kostendach (CHF)', lv_months:'Dauer (Monate)', lv_rates:'Stundensatz (CHF)', lv_share:'Beteiligung', lv_weights:'Phasengewichte (%)',
     k_pJ:'Junior', k_pI:'Intermediate', k_pS:'Senior', k_mJ:'Junior', k_mI:'Intermediate', k_mS:'Senior', k_hJ:'Junior', k_hI:'Intermediate', k_hS:'Senior',
@@ -328,7 +330,7 @@ const T = {
     k_w_shell:'App-Shell & Fundament', k_w_shop:'Shop', k_w_checkout:'Warenkorb & Kasse', k_w_account:'Kundenkonto', k_w_seller:'Verkäuferbereich', k_w_admin:'Admin & Launch',
     adv_note:'Phasengewichte sind Modellannahmen – nur sichtbar mit #modell in der Adresse.',
     n1_t:'Kostendach', n1_p:'Der Betrag je Phase ist die Obergrenze. Abgerechnet wird der tatsächliche Aufwand zum Stundensatz des Wegs bei Abnahme der Phase – liegt er darunter, zahlen Sie weniger; darüber geht er zu unseren Lasten. Was geliefert wird, steht in den Dokumenten 01–03.',
-    n2_t:'Für alle drei Wege gleich', n2_a:'Gleiche Spezifikation, gleiche neun Abnahmekriterien beim Launch.', n2_b:'Junior und Intermediate: ich lege das Fundament und prüfe an den Gates; den Geldpfad schreibe oder prüfe ich selbst.', n2_c:'Nicht enthalten: Hosting, Clerk, Stripe-Gebühren, Übersetzungen, Rechtstexte.', n2_d:'Preise in CHF exkl. MwSt.',
+    n2_t:'Für alle drei Wege gleich', n2_a:'Gleiche Spezifikation, gleiche zehn Abnahmekriterien beim Launch.', n2_b:'Junior und Intermediate: ich lege das Fundament und prüfe an den Gates; den Geldpfad schreibe oder prüfe ich selbst.', n2_c:'Nicht enthalten: Hosting, Clerk, Stripe-Gebühren, Übersetzungen, Rechtstexte.', n2_d:'Preise in CHF exkl. MwSt.',
     foot_l:'Shoppypella · Preismodell · Stand 17.09.2026', foot_r:'Beträge in CHF exkl. MwSt. Kostendach, kein Festpreis.',
     bar_t:'Kostendach', bar_meta:'{who} · {n} Phasen · {w}', bar_share:'+ {s} % vom Nettoverkaufspreis, {m} Monate', bar_note:'Rechnung je Phase bei Abnahme, bis zum Kostendach.',
   },
@@ -346,14 +348,16 @@ const T = {
     ph_eyebrow:'Phases', ph_title:'What you buy first',
     ph_sub:'The phases build on each other and are delivered in this order. Each is billed on acceptance, up to its ceiling. You can stop after any phase.',
     col_phase:'Phase', total:'Total ceiling', tot_note:'{n} of {all} phases · time to acceptance of the last one',
-    ph_legend:'Untick a phase to take it out of the offer. The foundation always stays – without the shell there is nothing to build on. Duration is the time to acceptance of the last chosen phase. The follow-up phase is offered separately after launch and cannot be selected yet.',
+    ph_legend:'Untick a phase to take it out of the offer. The foundation always stays – without the shell there is nothing to build on. Duration is the time to acceptance of the last chosen phase. The Influencer Marketplace is a phase of its own with its own ceiling; it can be unticked. The follow-up phase is offered separately after launch and cannot be selected yet.',
     p_shell:'App shell & foundation', p_shell_d:'Monorepo, data model, login, permissions, catalogue backend, hosting & staging, design system, header/footer',
     p_shop:'Shop', p_shop_d:'Home, category with filters, product page, search, five languages',
     p_checkout:'Cart & checkout', p_checkout_d:'Cart, pricing & VAT, shipping, checkout, card & TWINT, orders & emails',
     p_account:'Customer account', p_account_d:'Registration, orders, tracking, addresses, refunds',
-    p_seller:'Seller area', p_seller_d:'Signup with approval, dashboard: products, orders, shipping, payouts, influencer codes, settings',
+    p_seller:'Seller area', p_seller_d:'Signup with approval, dashboard: products, orders, shipping, payouts, settings',
     p_admin:'Admin & launch', p_admin_d:'Platform admin, coupons, legal pages & cookie banner, monitoring, backups, tests, go-live',
     p_followup:'Follow-up: SEO, analytics & more', p_followup_d:'SEO & performance (canonicals, hreflang, sitemaps, structured data, Core Web Vitals, ISR), analytics & conversion tracking, reviews with moderation, wishlist, saved payment methods, PayPal, carrier tracking APIs, returns, partial refunds, UTM attribution, CSV import',
+    p_influencer:'Influencer Marketplace', p_influencer_d:'Three-sided: sellers open a commission per product (% or CHF), influencer panel with product discovery and filters, personal tracking links, click and order attribution, commission lifecycle (pending → approved → paid), payout via Stripe Connect Express, admin oversight',
+    infl_tag:'Extension · 17.09.2026', lv_infl:'Influencer Marketplace (CHF)', k_iJ:'Junior', k_iI:'Intermediate', k_iS:'Senior',
     later_tag:'Follow-up · later', lv_follow:'Follow-up phase (CHF)', k_fJ:'Junior', k_fI:'Intermediate', k_fS:'Senior',
     lv_title:'Adjust', lv_prices:'Ceiling (CHF)', lv_months:'Duration (months)', lv_rates:'Hourly fee (CHF)', lv_share:'Revenue share', lv_weights:'Phase weights (%)',
     k_pJ:'Junior', k_pI:'Intermediate', k_pS:'Senior', k_mJ:'Junior', k_mI:'Intermediate', k_mS:'Senior', k_hJ:'Junior', k_hI:'Intermediate', k_hS:'Senior',
@@ -362,7 +366,7 @@ const T = {
     k_w_shell:'App shell & foundation', k_w_shop:'Shop', k_w_checkout:'Cart & checkout', k_w_account:'Customer account', k_w_seller:'Seller area', k_w_admin:'Admin & launch',
     adv_note:'Phase weights are model assumptions – shown only with #modell in the address.',
     n1_t:'Ceiling', n1_p:'The amount per phase is the upper limit. Actual effort is billed at the path’s hourly fee on acceptance of the phase – below it you pay less; above it is on us. What is delivered is in documents 01–03.',
-    n2_t:'The same on all three paths', n2_a:'Same specification, same nine acceptance criteria at launch.', n2_b:'Junior and intermediate: I lay the foundation and review at the gates; the money path I write or review myself.', n2_c:'Not included: hosting, Clerk, Stripe fees, translations, legal texts.', n2_d:'Prices in CHF excl. VAT.',
+    n2_t:'The same on all three paths', n2_a:'Same specification, same ten acceptance criteria at launch.', n2_b:'Junior and intermediate: I lay the foundation and review at the gates; the money path I write or review myself.', n2_c:'Not included: hosting, Clerk, Stripe fees, translations, legal texts.', n2_d:'Prices in CHF excl. VAT.',
     foot_l:'Shoppypella · Price model · as of 17.09.2026', foot_r:'Amounts in CHF excl. VAT. Ceiling, not a fixed price.',
     bar_t:'Ceiling', bar_meta:'{who} · {n} phases · {w}', bar_share:'+ {s} % of the net sale price, {m} months', bar_note:'Invoice per phase on acceptance, up to the ceiling.',
   },
@@ -381,14 +385,16 @@ const T = {
     ph_eyebrow:'Aşamalar', ph_title:'Önce neyi satın alırsınız',
     ph_sub:'Aşamalar birbirinin üzerine kurulur ve bu sırayla teslim edilir. Her biri kabulde faturalanır, en fazla kendi tavanına kadar. Her aşamadan sonra durabilirsiniz.',
     col_phase:'Aşama', total:'Toplam tavan', tot_note:'{all} aşamadan {n} · son aşamanın kabulüne kadar süre',
-    ph_legend:'Bir aşamayı tekliften çıkarmak için işareti kaldırın. Temel her zaman kalır – kabuk olmadan üzerine inşa edilecek bir şey yoktur. Süre, seçilen son aşamanın kabulüne kadar geçen zamandır. Devam aşaması lansmandan sonra ayrıca teklif edilir; burada henüz seçilemez.',
+    ph_legend:'Bir aşamayı tekliften çıkarmak için işareti kaldırın. Temel her zaman kalır – kabuk olmadan üzerine inşa edilecek bir şey yoktur. Süre, seçilen son aşamanın kabulüne kadar geçen zamandır. Influencer Marketplace kendi tavanı olan ayrı bir aşamadır; işareti kaldırılabilir. Devam aşaması lansmandan sonra ayrıca teklif edilir; burada henüz seçilemez.',
     p_shell:'Uygulama kabuğu ve temel', p_shell_d:'Monorepo, veri modeli, giriş, yetkiler, katalog arka ucu, barındırma ve hazırlık ortamı, tasarım sistemi, üst/alt bilgi',
     p_shop:'Mağaza', p_shop_d:'Ana sayfa, filtreli kategori, ürün sayfası, arama, beş dil',
     p_checkout:'Sepet ve ödeme', p_checkout_d:'Sepet, fiyat mantığı ve KDV, kargo, ödeme, kart ve TWINT, sipariş ve e-postalar',
     p_account:'Müşteri hesabı', p_account_d:'Kayıt, siparişler, kargo takibi, adresler, iadeler',
-    p_seller:'Satıcı alanı', p_seller_d:'Onaylı kayıt, panel: ürünler, siparişler, kargo, ödemeler, influencer kodları, ayarlar',
+    p_seller:'Satıcı alanı', p_seller_d:'Onaylı kayıt, panel: ürünler, siparişler, kargo, ödemeler, ayarlar',
     p_admin:'Yönetim ve lansman', p_admin_d:'Platform yönetimi, kuponlar, yasal metinler ve çerez bildirimi, izleme, yedekler, testler, yayına alma',
     p_followup:'Devam: SEO, analitik ve fazlası', p_followup_d:'SEO ve performans (canonical, hreflang, site haritaları, yapısal veri, Core Web Vitals, ISR), analitik ve dönüşüm takibi, moderasyonlu yorumlar, istek listesi, kayıtlı ödeme yöntemleri, PayPal, kargo API ile takip, iadeler, kısmi iade, UTM atfı, CSV içe aktarma',
+    p_influencer:'Influencer Marketplace', p_influencer_d:'Üç taraflı: satıcı ürün başına komisyon açar (% ya da CHF), ürün keşifli ve filtreli influencer paneli, kişiye özel takip bağlantıları, tıklama ve sipariş atfı, komisyon döngüsü (bekliyor → onaylandı → ödendi), Stripe Connect Express ile ödeme, yönetim denetimi',
+    infl_tag:'Ek · 17.09.2026', lv_infl:'Influencer Marketplace (CHF)', k_iJ:'Junior', k_iI:'Orta düzey', k_iS:'Senior',
     later_tag:'Devam aşaması · sonra', lv_follow:'Devam aşaması (CHF)', k_fJ:'Junior', k_fI:'Orta düzey', k_fS:'Senior',
     lv_title:'Ayarla', lv_prices:'Tavan (CHF)', lv_months:'Süre (ay)', lv_rates:'Saat ücreti (CHF)', lv_share:'Ciro payı', lv_weights:'Aşama ağırlıkları (%)',
     k_pJ:'Junior', k_pI:'Orta düzey', k_pS:'Senior', k_mJ:'Junior', k_mI:'Orta düzey', k_mS:'Senior', k_hJ:'Junior', k_hI:'Orta düzey', k_hS:'Senior',
@@ -396,7 +402,7 @@ const T = {
     k_w_shell:'Uygulama kabuğu ve temel', k_w_shop:'Mağaza', k_w_checkout:'Sepet ve ödeme', k_w_account:'Müşteri hesabı', k_w_seller:'Satıcı alanı', k_w_admin:'Yönetim ve lansman',
     adv_note:'Aşama ağırlıkları model varsayımıdır – yalnızca adreste #modell varsa görünür.',
     n1_t:'Tavan fiyat', n1_p:'Aşama başına tutar üst sınırdır. Aşamanın kabulünde gerçek emek, yolun saat ücretiyle faturalanır – altında kalırsa daha az ödersiniz; üstü bize aittir. Neyin teslim edileceği 01–03 dokümanlarındadır.',
-    n2_t:'Üç yolda da aynı', n2_a:'Aynı spesifikasyon, lansmanda aynı dokuz kabul ölçütü.', n2_b:'Junior ve orta düzey: temeli ben atarım, kapılarda ben denetlerim; para yolunu ben yazarım ya da denetlerim.', n2_c:'Dahil değil: barındırma, Clerk, Stripe ücretleri, çeviriler, yasal metinler.', n2_d:'Fiyatlar CHF, KDV hariç.',
+    n2_t:'Üç yolda da aynı', n2_a:'Aynı spesifikasyon, lansmanda aynı on kabul ölçütü.', n2_b:'Junior ve orta düzey: temeli ben atarım, kapılarda ben denetlerim; para yolunu ben yazarım ya da denetlerim.', n2_c:'Dahil değil: barındırma, Clerk, Stripe ücretleri, çeviriler, yasal metinler.', n2_d:'Fiyatlar CHF, KDV hariç.',
     foot_l:'Shoppypella · Fiyat modeli · 17.09.2026', foot_r:'Tutarlar CHF, KDV hariç. Tavan fiyat, sabit fiyat değil.',
     bar_t:'Tavan', bar_meta:'{who} · {n} aşama · {w}', bar_share:'+ net satış fiyatının %{s}’i, {m} ay', bar_note:'Her aşama kabulde faturalanır, tavana kadar.',
   }
@@ -406,7 +412,7 @@ const t = k => T[lang][k] ?? T.de[k] ?? k;
 const fill = (k, o) => t(k).replace(/\{(\w+)\}/g, (_, n) => o[n] ?? '');
 
 /* ---------- model ---------- */
-const DEFAULTS = { pJ:8240, pI:10780, pS:13860, mJ:5, mI:3, mS:2.25, hJ:18, hI:30, hS:48, fJ:1260, fI:1620, fS:2080, relDisc:13.8, term:36, gmv:300000,
+const DEFAULTS = { pJ:8240, pI:10780, pS:13860, mJ:5, mI:3, mS:2.25, hJ:18, hI:30, hS:48, iJ:1650, iI:2160, iS:2770, fJ:1260, fI:1620, fS:2080, relDisc:13.8, term:36, gmv:300000,
   w_shell:20, w_shop:15, w_checkout:20, w_account:10, w_seller:20, w_admin:15 };
 const OPTS = ['J','I','S'];
 const PHASES = ['shell','shop','checkout','account','seller','admin'];
@@ -414,12 +420,13 @@ const LEVERS = [
   {g:'lv_prices'}, {id:'pJ',min:4000,max:20000,step:10}, {id:'pI',min:4000,max:20000,step:10}, {id:'pS',min:4000,max:25000,step:10},
   {g:'lv_months'}, {id:'mJ',min:1,max:9,step:0.25}, {id:'mI',min:1,max:9,step:0.25}, {id:'mS',min:1,max:9,step:0.25},
   {g:'lv_rates'}, {id:'hJ',min:5,max:200,step:1}, {id:'hI',min:5,max:200,step:1}, {id:'hS',min:5,max:250,step:1},
+  {g:'lv_infl'}, {id:'iJ',min:500,max:10000,step:10}, {id:'iI',min:500,max:10000,step:10}, {id:'iS',min:500,max:12000,step:10},
   {g:'lv_follow'}, {id:'fJ',min:1000,max:15000,step:10}, {id:'fI',min:1000,max:15000,step:10}, {id:'fS',min:1000,max:20000,step:10},
   {g:'lv_share'}, {id:'relDisc',min:0,max:40,step:0.1}, {id:'term',min:12,max:60,step:6},
 ];
 const ADV = PHASES.map(p => ({id:'w_'+p, min:0, max:50, step:1}));
 let P = {...DEFAULTS};
-let state = { opt:'S', share:10, on:{shell:true,shop:true,checkout:true,account:true,seller:true,admin:true} };
+let state = { opt:'S', share:10, on:{shell:true,shop:true,checkout:true,account:true,seller:true,admin:true,influencer:true} };
 try { const s = JSON.parse(localStorage.getItem('sp-pm-v4') || 'null'); if (s && s.P) { P = {...DEFAULTS, ...s.P}; state = {...state, ...s.state, on:{...state.on, ...(s.state?.on||{})}}; } } catch (e) {}
 if (![0, 5, 10, 15].includes(state.share)) state.share = 10;
 const save = () => { try { localStorage.setItem('sp-pm-v4', JSON.stringify({P, state})); } catch (e) {} };
@@ -428,6 +435,11 @@ const fullPrice = o => P['p' + o];
 const SHARES = [0, 5, 10, 15];
 const cash = o => o === 'S' ? Math.max(0, Math.round(P.pS * (1 - P.relDisc / 100 * state.share / 10) / 5) * 5) : fullPrice(o);
 const months = o => P['m' + o];
+/* Influencer Marketplace: an add-on phase with its own ceiling (≈ 20 % of the launch ceiling,
+   two senior weeks). Priced like every other phase: the share reduces it, weeks follow from
+   the hourly fee and the way's hours per week. */
+const inflPrice = o => o === 'S' ? Math.max(0, Math.round(P.iS * (1 - P.relDisc / 100 * state.share / 10) / 10) * 10) : P['i' + o];
+const inflWeeks = o => { const fh = P['i' + o] / P['h' + o], hpw = (fullPrice(o) / P['h' + o]) / (months(o) * 4.33); return Math.max(0.5, Math.round(fh / hpw * 2) / 2); };
 function split(total) {
   const ws = PHASES.map(p => Math.max(0, P['w_' + p])), sum = ws.reduce((a, b) => a + b, 0) || 1;
   const out = {}; let acc = 0;
@@ -446,7 +458,9 @@ function compute() {
     const c = cash(o), ph = split(c), wk = weeksFor(o);
     let tot = 0, totw = 0, n = 0;
     for (const p of PHASES) if (state.on[p]) { tot += ph[p]; totw += wk[p]; n++; }
-    M[o] = { cash: c, full: fullPrice(o), ph, wk, tot, totw: Math.round(totw * 2) / 2, n };
+    const infl = inflPrice(o), inflw = inflWeeks(o);
+    if (state.on.influencer) { tot += infl; totw += inflw; n++; }
+    M[o] = { cash: c, full: fullPrice(o), ph, wk, infl, inflw, tot, totw: Math.round(totw * 2) / 2, n };
   }
   return M;
 }
@@ -500,6 +514,12 @@ function buildPhases() {
     cb.addEventListener('change', () => { state.on[p] = cb.checked; save(); render(); });
     phBody.appendChild(tr); rowEls[p] = tr;
   }
+  const ir = document.createElement('tr'); ir.dataset.p = 'influencer';
+  ir.innerHTML = `<td><input type="checkbox" class="row-check" id="on-influencer" aria-label="${t('p_influencer')}"></td><td class="name"><b>${t('p_influencer')} <span class="later-tag">${t('infl_tag')}</span></b><small>${t('p_influencer_d')}</small></td>` +
+    OPTS.map(o => `<td class="num" data-opt="${o}"><span class="c mono" id="c-influencer-${o}"></span><span class="w" id="w-influencer-${o}"></span></td>`).join('');
+  const icb = ir.querySelector('input'); icb.checked = !!state.on.influencer;
+  icb.addEventListener('change', () => { state.on.influencer = icb.checked; save(); render(); });
+  phBody.appendChild(ir); rowEls.influencer = ir;
   const fr = document.createElement('tr'); fr.className = 'later'; fr.dataset.p = 'followup';
   fr.innerHTML = `<td><input type="checkbox" class="row-check" id="on-followup" disabled aria-label="${t('p_followup')}"></td><td class="name"><b>${t('p_followup')} <span class="later-tag">${t('later_tag')}</span></b><small>${t('p_followup_d')}</small></td>` +
     OPTS.map(o => `<td class="num" data-opt="${o}"><span class="c mono" id="c-followup-${o}"></span><span class="w" id="w-followup-${o}"></span></td>`).join('');
@@ -538,12 +558,13 @@ function render() {
     const b = optEls[o], m = M[o];
     b.classList.toggle('selected', state.opt === o); b.setAttribute('aria-pressed', state.opt === o);
     setNum(b.querySelector('.pv'), m.tot);
-    b.querySelector('.dur').textContent = `${fmtMonths(months(o))} ${t('months')}`;
+    b.querySelector('.dur').textContent = `${fmtMonths(Math.round(m.totw / 4.33 * 4) / 4)} ${t('months')}`;
     b.querySelector('.rate').textContent = fill('rate_l', { r: P['h' + o], h: Math.round(m.tot / P['h' + o]) });
     if (o === 'S') {
       const badge = b.querySelector('.badge'), fullSplit = split(P.pS), tenSplit = split(Math.max(0, Math.round(P.pS * (1 - P.relDisc / 100) / 5) * 5));
       const sum = sp => PHASES.reduce((a, p) => a + (state.on[p] ? sp[p] : 0), 0);
-      badge.textContent = state.share > 0 ? fill('badge_full', { c: chf(sum(fullSplit)) }) : fill('badge_share', { c: chf(sum(tenSplit)) });
+      const iFull = state.on.influencer ? P.iS : 0, iTen = state.on.influencer ? Math.round(P.iS * (1 - P.relDisc / 100) / 10) * 10 : 0;
+      badge.textContent = state.share > 0 ? fill('badge_full', { c: chf(sum(fullSplit) + iFull) }) : fill('badge_share', { c: chf(sum(tenSplit) + iTen) });
     }
   }
   // share block
@@ -552,7 +573,7 @@ function render() {
   segEl.querySelectorAll('button').forEach(b => { b.classList.toggle('on', +b.dataset.s === state.share); b.disabled = !isS; });
   const S = M.S;
   setNum(document.getElementById('sh-cash'), S.tot);
-  const fullSplit = split(P.pS), fullIncl = PHASES.reduce((a, p) => a + (state.on[p] ? fullSplit[p] : 0), 0), hoursS = fullIncl / P.hS;
+  const fullSplit = split(P.pS), fullIncl = PHASES.reduce((a, p) => a + (state.on[p] ? fullSplit[p] : 0), 0) + (state.on.influencer ? P.iS : 0), hoursS = fullIncl / P.hS;
   document.getElementById('sh-cash-l').innerHTML = !isS ? t('sh_off') : state.share > 0
     ? fill('sh_cash_l', { s: state.share, full: chf(fullIncl) }) + ' · ' + fill('sh_rate', { r: hoursS > 0 ? Math.round(S.tot / hoursS) : P.hS, h: Math.round(hoursS) })
     : fill('sh_cash_l0', { r: P.hS, h: Math.round(hoursS) });
@@ -567,14 +588,16 @@ function render() {
     rowEls[p].classList.toggle('off', !state.on[p]);
     for (const o of OPTS) { setNum(document.getElementById(`c-${p}-${o}`), M[o].ph[p]); document.getElementById(`w-${p}-${o}`).textContent = fmtWeeks(M[o].wk[p]); }
   }
+  rowEls.influencer.classList.toggle('off', !state.on.influencer);
+  for (const o of OPTS) { setNum(document.getElementById('c-influencer-' + o), M[o].infl); document.getElementById('w-influencer-' + o).textContent = fmtWeeks(M[o].inflw); }
   for (const o of OPTS) {
     const fh = P['f' + o] / P['h' + o], hpw = (fullPrice(o) / P['h' + o]) / (months(o) * 4.33);
     setNum(document.getElementById('c-followup-' + o), P['f' + o]);
     document.getElementById('w-followup-' + o).textContent = fmtWeeks(Math.max(0.5, Math.round(fh / hpw * 2) / 2));
   }
   for (const o of OPTS) { setNum(document.getElementById('tot-' + o), M[o].tot); document.getElementById('totw-' + o).textContent = `${fmtWeeks(M[o].totw)} · ≈ ${fmtMonths(Math.round(M[o].totw / 4.33 * 4) / 4)} ${t('months')}`; }
-  const n = PHASES.filter(p => state.on[p]).length;
-  document.getElementById('tot-note').textContent = fill('tot_note', { n, all: PHASES.length });
+  const n = PHASES.filter(p => state.on[p]).length + (state.on.influencer ? 1 : 0);
+  document.getElementById('tot-note').textContent = fill('tot_note', { n, all: PHASES.length + 1 });
   // bar
   const m = M[state.opt], who = t(state.opt === 'J' ? 'junior' : state.opt === 'I' ? 'inter' : 'senior');
   setNum(document.getElementById('bar-total'), m.tot);
@@ -590,7 +613,7 @@ function applyLang() {
 }
 function buildAll() { buildOpts(); buildSeg(); buildPhases(); buildLevers(); }
 document.getElementById('gmv').addEventListener('input', e => { P.gmv = +e.target.value; save(); render(); });
-document.getElementById('reset').addEventListener('click', () => { P = {...DEFAULTS}; state = { opt:'S', share:10, on:Object.fromEntries(PHASES.map(p => [p, true])) }; save(); buildAll(); render(); });
+document.getElementById('reset').addEventListener('click', () => { P = {...DEFAULTS}; state = { opt:'S', share:10, on:{ ...Object.fromEntries(PHASES.map(p => [p, true])), influencer:true } }; save(); buildAll(); render(); });
 document.getElementById('lang').addEventListener('click', () => { lang = lang === 'de' ? 'en' : lang === 'en' ? 'tr' : 'de'; try { localStorage.setItem('sp-pm-lang', lang); } catch (e) {} applyLang(); buildAll(); render(); });
 try { const l = localStorage.getItem('sp-pm-lang'); if (l === 'en' || l === 'de' || l === 'tr') lang = l; } catch (e) {}
 applyLang(); buildAll(); render();
