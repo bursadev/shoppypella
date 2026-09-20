@@ -27,6 +27,7 @@ OUT      = "docs"
 ROOT     = "Shoppypella.dc.html"          # the root component -> index.html
 SIBLINGS = ["ProductCard.dc.html", "Footer.dc.html", "Thumb.dc.html"]
 PRICE    = "src/preismodell/index.html"   # -> docs/preismodell/index.html
+OFFER    = "src/angebot/index.html"       # -> docs/angebot/index.html
 MAX_PHOTO = (900, 1350)
 
 HEAD = '''<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,6 +88,19 @@ def build_price_model():
         f.write(html)
 
 
+def build_offer():
+    """docs/angebot/ -- the interactive quote; same shape as the price model."""
+    html = open(OFFER, encoding="utf-8").read()
+    html, n = GOOGLE_FONTS.subn("", html)
+    assert n == 3, f"expected 3 Google Fonts links in the offer, replaced {n}"
+    css = self_hosted_fonts(("hanken-grotesk.css", "ibm-plex-mono.css"))
+    css = css.replace('url("assets/fonts/', 'url("../assets/fonts/')
+    html = html.replace("<style>", css + "<style>", 1)
+    os.makedirs(f"{OUT}/angebot", exist_ok=True)
+    with open(f"{OUT}/angebot/index.html", "w", encoding="utf-8") as f:
+        f.write(html)
+
+
 def copy_asset(rel):
     """Copy one `assets/…` reference out of the handoff, photos downscaled."""
     src, dst = f"{HANDOFF}/{rel}", f"{OUT}/{rel}"
@@ -120,6 +134,7 @@ def main():
 
     html = build_index()
     build_price_model()
+    build_offer()
 
     # Only the photos the prototype actually shows; the handoff carries spares.
     refs = set()
@@ -141,6 +156,7 @@ def main():
         print(f"  {rel:<20} {os.path.getsize(OUT + '/' + rel):>8} bytes")
     print(f"index:      {os.path.getsize(OUT + '/index.html'):>8} bytes")
     print(f"preismodell:{os.path.getsize(OUT + '/preismodell/index.html'):>8} bytes")
+    print(f"angebot:    {os.path.getsize(OUT + '/angebot/index.html'):>8} bytes")
 
 
 main()
